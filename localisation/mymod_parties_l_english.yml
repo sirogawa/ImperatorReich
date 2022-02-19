@@ -1,0 +1,28 @@
+﻿l_english:
+
+ GAT_neutrality_party:0 "ハプスブルク・ロートリンゲン家"
+ GAT_neutrality_party_long:0 "ハプスブルク王朝"
+ GAT_democratic_party:0 "ガリツィア国民党"
+ GAT_democratic_party_long:0 "ガリツィア国民党"
+ GAT_communism_party:0 "ガリツィア労働者党"
+ GAT_communism_party_long:0 "ガリツィア労働者党"
+ GAT_fascism_party:0 "ガリツィア国家社会主義労働者党"
+ GAT_fascism_party_long:0 "ガリツィア国家社会主義労働者党"
+
+ WGR_neutrality_party:0 "ドイツキリスト教民主同盟"
+ WGR_neutrality_party_long:0 "ドイツキリスト教民主同盟"
+ WGR_democratic_party:0 "自由民主党"
+ WGR_democratic_party_long:0 "自由民主党"
+ WGR_communism_party:0 "ドイツ社会民主党"
+ WGR_communism_party_long:0 "ドイツ社会民主党"
+ WGR_fascism_party:0 "ドイツ国家社会主義労働者党"
+ WGR_fascism_party_long:0 "ドイツ国家社会主義労働者党"
+
+ SOV_neutrality_party:0 "ロマノフ王朝"
+ SOV_neutrality_party_long:0 "ロマノフ王朝"
+ SOV_democratic_party:0 "10月17日同盟"
+ SOV_democratic_party_long:0 "10月17日同盟"
+ SOV_communism_party:0 "ロシア社会民主労働党"
+ SOV_communism_party_long:0 "ロシア社会民主労働党"
+ SOV_fascism_party:0 "ロシアファシスト党"
+ SOV_fascism_party_long:0 "ロシアファシスト党"

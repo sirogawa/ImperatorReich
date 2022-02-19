@@ -1,0 +1,46 @@
+characters={
+	SOV_tuari_arekusei={
+		name=SOV_tuari_arekusei
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= despotism
+			expire="1965.1.1.1"
+			desc="AREKUSEI_DESC" 
+		}
+	}
+
+	SOV_syakaiminsyutou={
+		name=SOV_syakaiminsyutou
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= marxism
+			expire="1965.1.1.1"
+			desc="SYAKAIMINSYUTOU_DESC" 
+		}
+	}
+
+	SOV_reinin={
+		name=SOV_reinin
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= leninism
+			expire="1965.1.1.1"
+			desc="SYAKAIMINSYUTOU_DESC" 
+		}
+	}
+
+
+	
+}

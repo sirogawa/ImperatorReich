@@ -1,0 +1,838 @@
+focus_tree = {
+	id = GAT_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = GAT
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1200 }
+	
+	#帝国を再建
+	focus = { 
+		id = GAT_NF_one
+		icon = GFX_focus_generic_home_defense
+		x = 10
+		y = 0
+		cost = 1
+        completion_reward = {
+          
+        }
+    }
+	
+	#ロシアのツァーリとの確認（イベント「ロシアのツァーリとの確認」効果安定度上昇
+	focus = { 
+		id = GAT_NF_tuar
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 9
+		y = 1
+		cost = 3
+		prerequisite = { focus = GAT_NF_one }
+		mutually_exclusive = { focus = GAT_NF_zikokaiketu }
+        completion_reward = {
+			country_event = { id = GATibents.1 days = 1 }
+        }
+    }
+
+	#ロシアの支援を要請（イベント「支援を求める」効果国民精神「ロシアからの経済的支援」
+	focus = { 
+		id = GAT_NF_sien
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 9
+		y = 2
+		cost = 10
+		prerequisite = { focus = GAT_NF_tuar }
+		completion_reward = {
+        }
+    }
+
+	#ミンスク会議（イベント「ミンスク会議」効果独立保証
+	focus = { 
+		id = GAT_NF_minsukukaigi
+		icon = GFX_focus_POL_complete_april_constitution
+		x = 9
+		y = 3
+		cost = 10
+		prerequisite = { focus = GAT_NF_sien }
+        completion_reward = {
+			country_event = { id = GATibents.2 days = 1 }
+          
+        }
+    }
+	
+	#ハクスブルク帝国
+	focus = { 
+		id = GAT_NF_hakusuburuku
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 16
+		y = 0
+		cost = 10
+		prerequisite = {
+			focus = G
+		}
+		mutually_exclusive = {
+			focus = n
+		}
+		completion_reward = {
+          
+        }
+    }
+
+	#自国自己解決（イベント「自国自己解決」効果安定度上昇
+	focus = { 
+		id = GAT_NF_zikokaiketu
+		icon = GFX_focus_generic_support_the_left_right
+		x = 11
+		y = 1
+		cost = 3
+		prerequisite = { focus = GAT_NF_one }
+		mutually_exclusive = { focus = GAT_NF_tuar }
+        completion_reward = {
+          
+        }
+    }
+
+	#カール手形（効果国民精神「カール手形」（メフォのパクリ）
+	focus = { 
+		id = GAT_NF_kaartegata
+		icon = GFX_focus_generic_support_the_left_right
+		x = 11
+		y = 2
+		cost = 10
+		prerequisite = { focus = GAT_NF_zikokaiketu }
+        completion_reward = {
+          
+        }
+    }
+	
+	#借金は踏み倒す物（効果国民精神「国債」安定度低下戦争協力度上昇
+	focus = { 
+		id = GAT_NF_syakinnhahumitaosumono
+		icon = GFX_focus_generic_support_the_left_right
+		x = 11
+		y = 3
+		cost = 10
+		prerequisite = { focus = GAT_NF_kaartegata }
+        completion_reward = {
+          
+        }
+    }
+
+	#ガリツィア陸軍（効果ドクトリンバフと陸軍経験値30
+	focus = { 
+		id = GAT_NF_garituarikugun
+		icon = GFX_goal_generic_army_doctrines
+		x = 5
+		y = 0
+		cost = 10
+        completion_reward = {
+			army_experience = 30
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = land_doctrine
+			}          
+        }
+    }
+    #陸軍改革
+	focus = { 
+		id = GAT_NF_rikugunkaikaku
+		icon = GFX_goal_generic_small_arms
+		x = 5
+		y = 1
+		cost = 10
+        prerequisite = { focus = GAT_NF_garituarikugun }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 3
+				category = armor
+			}
+        }
+    }
+
+    #軍用車
+	focus = { 
+		id = GAT_NF_rikugunnsoubikousin
+		icon = GFX_goal_generic_army_motorized
+		x = 3
+		y = 1
+		cost = 10
+        prerequisite = { focus = GAT_NF_garituarikugun }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+        }
+    }
+	
+	#装甲師団
+	focus = { 
+		id = GAT_NF_kikousidan
+		icon = GFX_goal_generic_army_tanks
+		x = 7
+		y = 1
+		cost = 10
+        prerequisite = { focus = GAT_NF_garituarikugun }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+        }
+    }
+
+
+	#ガリツィア海軍
+	focus = { 
+		id = GAT_NF_garituxiakaigun
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 5
+		y = 2
+		cost = 10
+        completion_reward = {
+			navy_experience = 30 
+        }
+    }
+
+   #潜水艦
+   focus = { 
+	id = GAT_NF_kaigunsennsukain
+	icon = GFX_goal_generic_navy_submarine
+	x = 3
+	y = 3
+	cost = 10
+	prerequisite = { focus = GAT_NF_garituxiakaigun }
+	completion_reward = {
+		add_tech_bonus = {
+			name = ss_bonus
+			bonus = 1.0
+			ahead_reduction = 2
+			uses = 1
+			category = ss_tech
+		}
+	}
+   }
+
+   #戦艦
+   focus = { 
+	id = GAT_NF_kaigunsennsennkan
+	icon = GFX_goal_generic_navy_battleship
+	x = 5
+	y = 3
+	cost = 10
+	prerequisite = { focus = GAT_NF_garituxiakaigun }
+	completion_reward = {
+		add_tech_bonus = {
+			name = capital_ships_bonus
+			bonus = 1.0
+			ahead_reduction = 2
+			uses = 1
+			category = bc_tech
+			category = bb_tech
+			category = cv_tech
+		}
+	}
+   }
+
+   #駆逐艦
+   focus = { 
+	id = GAT_NF_kaigunkutikukann
+	icon = GFX_goal_generic_navy_cruiser
+	x = 7
+	y = 3
+	cost = 10
+	prerequisite = { focus = GAT_NF_garituxiakaigun }
+	completion_reward = {
+		add_tech_bonus = {
+			name = dd_bonus
+			bonus = 1.0
+			ahead_reduction = 2
+			uses = 1
+			category = dd_tech
+		}
+	}
+   }
+
+
+   focus = {
+	id = GAT_industrial
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 5
+	cost = 3
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	
+	available_if_capitulated = yes
+
+	completion_reward = {
+		add_tech_bonus = {
+			name = industrial_bonus
+			bonus = 1.0
+			uses = 1
+			category = industry
+		}
+	}
+
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0
+			date < 1939.1.1
+			OR = { 
+				# we dont want chinese minors to go crazy on slots early since they get eaten
+				tag = GXC 
+				tag = YUN
+				tag = SHX
+				tag = XSM
+				tag = BEL
+				tag = LUX
+				tag = HOL
+				tag = DEN
+
+				# we also dont want tiny nations to go crazy with slots right away
+				num_of_controlled_states < 2
+			}				
+		}
+	}
+ }
+
+ focus = {
+	id = GAT_construction_effort
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = GAT_industrial }
+	x = 11
+	y = 6
+	cost = 3
+
+	search_filters = { FOCUS_FILTER_INDUSTRY  }
+	
+	available_if_capitulated = yes
+
+
+	
+	ai_will_do = {
+		factor = 2
+	}
+
+	bypass = {
+		custom_trigger_tooltip = {
+			tooltip = construction_effort_tt
+			all_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 1
+					include_locked = yes
+				}					
+			}
+		}
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+ }
+
+ focus = {
+	id = GAT_production_effort
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = { focus = GAT_industrial }
+	x = 9
+	y = 6
+	cost = 3
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				ROOT = { has_full_control_of_state = PREV }
+				is_core_of = ROOT
+				not = {
+					OR = {
+						state = 88
+						state = 81
+						state = 91
+					}
+				}
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = JAP_nationalize_war_industry_AF
+		}
+		random_owned_controlled_state = {
+			limit = {
+				ROOT = { has_full_control_of_state = PREV }
+				is_core_of = ROOT
+				not = {
+					OR = {
+						state = 88
+						state = 81
+						state = 91
+					}
+				}					
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = JAP_nationalize_war_industry_IC
+		}
+	}
+ }
+
+ focus = {
+	id = GAT_construction_effort_2
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = GAT_construction_effort }
+	x = 11
+	y = 7
+	cost = 3
+
+	search_filters = { FOCUS_FILTER_INDUSTRY  }
+	
+	available_if_capitulated = yes
+
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	bypass = {
+		custom_trigger_tooltip = {
+			tooltip = construction_effort_tt
+			all_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+	}		
+
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+ focus = {
+	id = GAT_production_effort_2
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = { focus = GAT_production_effort }
+	x = 9
+	y = 7
+	cost = 3
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				ROOT = { has_full_control_of_state = PREV }
+				is_core_of = ROOT
+				not = {
+					OR = {
+						state = 88
+						state = 81
+						state = 91
+					}
+				}
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = JAP_nationalize_war_industry_AF
+		}
+		random_owned_controlled_state = {
+			limit = {
+				ROOT = { has_full_control_of_state = PREV }
+				is_core_of = ROOT
+				not = {
+					OR = {
+						state = 88
+						state = 81
+						state = 91
+					}
+				}					
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = JAP_nationalize_war_industry_IC
+		}
+	}
+ }
+
+
+ focus = {
+	id = GAT_production_effort_3
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = { focus = GAT_production_effort_2 }
+	x = 9
+	y = 8
+	cost = 3
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+ }
+
+
+ focus = {
+	id = GAT_construction_effort_3
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = GAT_construction_effort_2 }
+	x = 11
+	y = 8
+	cost = 3
+
+	search_filters = { FOCUS_FILTER_INDUSTRY  }
+	
+	available_if_capitulated = yes
+
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	bypass = {
+		custom_trigger_tooltip = {
+			tooltip = construction_effort_tt
+			all_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 2
+					include_locked = yes
+				}
+			}
+		}
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}
+	}
+
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+ }
+ focus = {
+	id = GAT_naval_effort
+	icon = GFX_goal_generic_construct_naval_dockyard
+	x = 2
+	y = 2
+	cost = 10
+	available = {
+		any_state = {
+			is_coastal = yes
+			is_controlled_by = ROOT
+		}
+	}
+
+	complete_tooltip = {
+		navy_experience = 25
+		add_extra_state_shared_building_slots = 3
+		add_building_construction = {
+			type = dockyard
+			level = 3
+			instant_build = yes
+		}
+	}
+	
+	completion_reward = {
+		navy_experience = 25
+		if = {
+			limit = {
+				NOT = {
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = naval_effort_built
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = naval_effort_built }
+				any_owned_state = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = naval_effort_built
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = naval_effort_built }
+				NOT = {
+					any_owned_state = {
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+			random_state = {
+				limit = {
+					controller = { tag = ROOT }
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}			
+	}
+	}
+	
+	focus = {
+		id = GAT_extra
+		icon = GFX_focus_research
+		x = 7
+		y = 8
+		cost = 10		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+}
+

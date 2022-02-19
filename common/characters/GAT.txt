@@ -1,0 +1,16 @@
+characters={
+
+    GAT_kaaru={
+        name=GAT_kaaru
+		portraits={
+			civilian={
+				large= GFX_kaaru
+			}
+		}
+		country_leader={
+			ideology= despotism
+			expire="1965.1.1.1"
+			desc="KAARU_DESC" 
+		}
+    }
+}

@@ -1,0 +1,29 @@
+focus_tree = {
+	id = WGR_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = WGR
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1200 }
+
+	focus = {
+		id = WGR_NF_one
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 0
+		cost = 10
+        completion_reward = {
+          
+        }
+    }
+
+
+}

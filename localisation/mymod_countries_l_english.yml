@@ -1,0 +1,28 @@
+﻿l_english:
+
+ GAT_fascism:0 "ガリツィア・ロドメリア二重帝国"
+ GAT_fascism_DEF:0 "ガリツィア・ロドメリア二重帝国"
+ GAT_fascism_ADJ:0 "ガリツィア・ロドメリア"
+ GAT_democratic:0 "ガリツィア・ロドメリア共和国"
+ GAT_democratic_DEF:0 "ガリツィア・ロドメリア共和国"
+ GAT_democratic_ADJ:0 "ガリツィア・ロドメリア"
+ GAT_neutrality:0 "ガリツィア・ロドメリア王国"
+ GAT_neutrality_DEF:0 "ガリツィア・ロドメリア王国"
+ GAT_neutrality_ADJ:0 "ガリツィア・ロドメリア"
+ GAT_communism:0 "ガリツィア・ロドメリア社会主義共和国"
+ GAT_communism_DEF:0 "ガリツィア・ロドメリア社会主義共和国"
+ GAT_communism_ADJ:0 "ガリツィア・ロドメリア"
+
+ WGR_fascism:0 "国家社会主義ドイツ国"
+ WGR_fascism_DEF:0 "国家社会主義ドイツ国"
+ WGR_fascism_ADJ:0 "ドイツ"
+ WGR_democratic:0 "ドイツ共和国"
+ WGR_democratic_DEF:0 "ドイツ共和国"
+ WGR_democratic_ADJ:0 "ドイツ国"
+ WGR_neutrality:0 "ドイツ共和国"
+ WGR_neutrality_DEF:0 "ドイツ共和国"
+ WGR_neutrality_ADJ:0 "ドイツ"
+ WGR_communism:0 "ドイツ社会主義共和国"
+ WGR_communism_DEF:0 "ドイツ社会主義共和国"
+ WGR_communism_ADJ:0 "ドイツ"
+

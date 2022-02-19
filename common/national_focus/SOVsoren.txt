@@ -1,0 +1,97 @@
+focus_tree = {
+	id = SOV_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = SOV
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1200 }
+    #帝政の道
+	focus = {
+		id = SOV_NF_one
+		icon = GFX_focus_POL_cossack_king
+		mutually_exclusive = { focus = SOV_NF_kyousannzyugi focus = SOV_NF_kyousannzyugi }
+		x = 10
+		y = 0
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+
+	#共産主義思想
+	focus = {
+		id = SOV_NF_kyousannzyugi
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		mutually_exclusive = { focus = SOV_NF_one focus = SOV_NF_kouteihakennryokuwohaki }
+		x = 16
+		y = 0
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+	
+	#トロツキー派
+	focus = {
+		id = SOV_NF_reininha
+		icon = GFX_focus_fra_loyalty_trotzky
+		mutually_exclusive = { focus = SOV_NF_marukusuha focus = SOV_NF_sutarin }
+		prerequisite = { focus = SOV_NF_kyousannzyugi }
+		x = 14
+		y = 1
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+
+	#マルクス派
+	focus = {
+		id = SOV_NF_marukusuha
+		icon = GFX_focus_spr_unify_the_london_bureau
+		mutually_exclusive = { focus = SOV_NF_reininha focus = SOV_NF_sutarin }
+		prerequisite = { focus = SOV_NF_kyousannzyugi }
+		x = 16
+		y = 1
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+
+	#スターリン派
+	focus = {
+		id = SOV_NF_sutarin
+		icon = GFX_focus_fra_loyalty_stalin
+		mutually_exclusive = { focus = SOV_NF_reininha focus = SOV_NF_sutarin }
+		prerequisite = { focus = SOV_NF_kyousannzyugi }
+		x = 18
+		y = 1
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+
+	#皇帝は権力を破棄
+	focus = {
+		id = SOV_NF_kouteihakennryokuwohaki
+		icon = GFX_focus_rom_abdicate
+		mutually_exclusive = { focus = SOV_NF_one focus = SOV_NF_kyousannzyugi }
+		x = 5
+		y = 0
+		cost = 10
+        completion_reward = {
+			political_power_factor = 0.15
+        }
+    }
+
+}

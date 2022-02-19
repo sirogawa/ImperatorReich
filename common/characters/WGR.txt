@@ -1,0 +1,99 @@
+characters={
+	WGR_teodooru_hoisu={
+		name=WGR_teodooru_hoisu
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= conservatism
+			expire="1965.1.1.1"
+			desc="HOISU_DESC" 
+		}
+	}
+	
+	WGR_wilhelm_pieck={
+		name=WGR_wilhelm_pieck
+		portraits={
+			civilian={
+				large=GFX_portrait_WGR_wilhelm_pieck
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits={ exiled }
+			expire="1965.1.1.1"
+			desc="PIECK_DESC" 
+		}
+	}
+
+    WGR_konrato_adenauar={
+		name=WGR_konrato_adenauar
+		portraits={
+			civilian={
+				large= GFX_konrarto
+			}
+		}
+		country_leader={
+			ideology= 	centrism
+			expire="1965.1.1.1"
+			desc="KONRAATO_DESC" 
+		}
+	}
+
+    WGR_gure_gou={
+		name=WGR_gure_gou
+		portraits={
+			civilian={
+				large= GFX_guregure
+			}
+		}
+		country_leader={
+			ideology= nazism
+            traits={ dictator }
+			expire="1965.1.1.1"
+			desc="GUREGOU_DESC" 
+		}
+	}
+
+    WGR_mansyutain={
+		name=WGR_mansyutain
+		portraits={
+			army={
+				large= GFX_portrait_GER_erich_von_manstein
+			}
+		}
+		field_marshal = { 
+		skill = 4
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 3
+		traits = { panzer_leader trickster 	panzer_expert thorough_planner }
+		legacy_id = int
+		visible = {}
+	  }
+	}
+
+    WGR_gudeirian={
+		name=WGR_gudeirian
+		portraits={
+			army={
+				large= GFX_portrait_GER_heinz_guderian
+			}
+		}
+		field_marshal = { 
+		skill = 4
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 3
+		traits = { panzer_leader trickster 	panzer_expert thorough_planner }
+		legacy_id = int
+		visible = {}
+	  }
+	}
+
+
+}

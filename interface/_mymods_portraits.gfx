@@ -1,0 +1,28 @@
+spriteTypes = {
+	#MODportrait
+	spriteType = {
+		name = "GFX_portrait_WGR_wilhelm_pieck"
+		texturefile = "gfx/leaders/WGR/Portrait_WGR_Wilhelm_Pieck.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_konrarto"
+		texturefile = "gfx/leaders/WGR/konrarto.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_mfg"
+		texturefile = "gfx/leaders/WGR/mfg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_guregure"
+		texturefile = "gfx/leaders/WGR/guregorru.dds"
+	}
+
+	spriteType = {
+		name = "GFX_kaaru"
+		texturefile = "gfx/leaders/GAT/kaaruitisei.dds"
+	}
+
+}

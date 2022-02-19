@@ -1,0 +1,28 @@
+﻿add_namespace = GATibents
+
+country_event ={
+	id = GATibents.1
+	title = GATibents.1.t
+	desc = GATibents.1.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = GATibents.1.a
+		add_stability = 0.10
+	}
+}
+
+country_event ={
+	id = GATibents.2
+	title = GATibents.2.t
+	desc = GATibents.2.d
+	picture = GFX_report_event_second_vienna_award_pact
+	is_triggered_only = yes
+	option = {
+		name = GATibents.2.a
+		add_stability = 0.10
+		hidden_effect = {
+			news_event = { hours = 1 id = GATnews.1 }
+		}
+	}
+}
