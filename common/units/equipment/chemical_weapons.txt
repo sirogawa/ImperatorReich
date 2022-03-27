@@ -1,0 +1,91 @@
+equipments = {
+
+	mustard_gas_equipment = {
+		year = 1918
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.7
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 0.5
+		resources = {
+
+		}
+	}
+	mustard_gas_equipment_1 = {
+		year = 1918
+
+		archetype = mustard_gas_equipment
+		priority = 20	
+	}
+	chlorine_gas_equipment = {
+		year = 1918
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.7
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 0.5
+		resources = {
+
+		}
+	}
+	chlorine_gas_equipment_1 = {
+		year = 1918
+
+		archetype = chlorine_gas_equipment
+		priority = 20	
+	}
+	diphosgene_equipment = {
+		year = 1918
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.7
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 0.5
+		resources = {
+
+		}
+	}
+	diphosgene_equipment_1 = {
+		year = 1918
+
+		archetype = diphosgene_equipment
+		priority = 20	
+	}
+
+}

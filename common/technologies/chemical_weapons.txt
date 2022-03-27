@@ -1,0 +1,112 @@
+technologies = {
+	
+	mustard_gas_tech = {
+
+		enable_equipments = {
+			mustard_gas_equipment_1
+		}
+		research_cost = 1.0
+		start_year = 1930
+		folder = {
+			name = chemical_weapons_folder
+			position = { x = 1 y = 0 }
+		}
+		
+		categories = {
+			support_tech
+			chemical_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 4
+				date > "1937.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1938.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1939.1.1"
+			}
+		}
+	}
+	chlorine_gas_tech = {
+
+		enable_equipments = {
+			chlorine_gas_equipment_1
+		}
+		research_cost = 1.0
+		start_year = 1930
+		folder = {
+			name = chemical_weapons_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			support_tech
+			chemical_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 4
+				date > "1937.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1938.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1939.1.1"
+			}
+		}
+	}
+	diphosgene_tech = {
+
+		enable_equipments = {
+			diphosgene_equipment_1
+		}
+		research_cost = 1.0
+		start_year = 1930
+		folder = {
+			name = chemical_weapons_folder
+			position = { x = 7 y = 0 }
+		}
+		
+		categories = {
+			support_tech
+			chemical_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 4
+				date > "1937.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1938.1.1"
+			}
+			
+			modifier = {
+				factor = 4
+				date > "1939.1.1"
+			}
+		}
+	}
+
+}	

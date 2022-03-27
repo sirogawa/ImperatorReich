@@ -1,0 +1,17 @@
+﻿l_english:
+#tech tabs
+#chemical_weapons
+ chemical_weapons_folder:0 "化学兵器"
+ chemical_weapons_folder_desc:0 "化学兵器とは、毒ガスとかがもあーってなる怖いやつである。"
+ chemical_weapons_subtitle_chemical_weapons:0 "化学兵器"
+#tech
+#chemical_weapons
+ mustard_gas_equipment:0 "マスタードガス"
+ mustard_gas_equipment_1:0 "マスタードガス"
+ mustard_gas_equipment_1_desc:0 "マスタードガスは糜爛性毒ガス、硫化ジクロロエチルの慣用名。"
+ chlorine_gas_equipment:0 "塩素ガス"
+ chlorine_gas_equipment_1:0 "塩素ガス"
+ chlorine_gas_equipment_1_desc:0 "塩素ガスは刺激性のある黄緑色の気体であるが、保存・使用しやすくするため化合物として液体や固体にすることが多いため、区別のため特に「塩素ガス」と記述する。"
+ diphosgene_equipment:0 "ジホスゲン"
+ diphosgene_equipment_1:0 "ジホスゲン"
+ diphosgene_equipment_1_desc:0 "ジホスゲンは炭素と酸素と塩素の化合物である。ホスゲンダイマーとも呼ばれる。常温で無色の液体であり、有機合成の有用な試薬として用いられている。"
