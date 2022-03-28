@@ -1,0 +1,36 @@
+#
+spriteTypes = {
+	#large Unit Icons
+	spriteType = {
+		name = "GFX_unit_mustard_gas_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mustard_gas_company_icon.dds"
+		noOfFrames = 2
+	} 
+	spriteType = {
+		name = "GFX_unit_chlorine_gas_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_chlorine_gas_company_icon.dds"
+		noOfFrames = 2
+	} 
+	spriteType = {
+		name = "GFX_unit_diphosgene_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_diphosgene_company_icon.dds"
+		noOfFrames = 2
+	} 
+	#Small Unit Icons
+	spriteType = {
+		name = "GFX_unit_mustard_gas_company_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds" 
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_chlorine_gas_company_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds" 
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_diphosgene_company_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds" 
+		noOfFrames = 2
+	}
+
+}

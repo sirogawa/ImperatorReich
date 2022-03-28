@@ -5,6 +5,10 @@ technologies = {
 		enable_equipments = {
 			mustard_gas_equipment_1
 		}
+		enable_subunits = {
+			mustard_gas_company
+		}
+
 		research_cost = 1.0
 		start_year = 1930
 		folder = {
@@ -41,6 +45,10 @@ technologies = {
 		enable_equipments = {
 			chlorine_gas_equipment_1
 		}
+		enable_subunits = {
+			chlorine_gas_company
+		}
+
 		research_cost = 1.0
 		start_year = 1930
 		folder = {
@@ -77,6 +85,10 @@ technologies = {
 		enable_equipments = {
 			diphosgene_equipment_1
 		}
+		enable_subunits = {
+			diphosgene_company
+		}
+
 		research_cost = 1.0
 		start_year = 1930
 		folder = {
