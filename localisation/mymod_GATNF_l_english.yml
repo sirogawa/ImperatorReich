@@ -33,4 +33,9 @@
  GAT_NF_kaigunkutikukann_desc:0 "説明"
  GAT_extra:0 "王立研究所"
  GAT_extra_desc:0 "王立の研究所を立ち上げて研究に力を入れる"
- 
+ GAT_NF_aviation:0 "ガリツィア空軍"
+ GAT_NF_aviation_desc:0 "空軍に注力する"
+ GAT_NF_fighter_focus:0 "戦闘機開発"
+ GAT_NF_fighter_focus_desc:0 "戦闘機開発に注力する" 
+ GAT_NF_aviation_effort:0 "爆撃機開発" 
+ GAT_NF_aviation_effort_desc:0 "爆撃機の開発に注力する"

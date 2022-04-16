@@ -46,9 +46,10 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 9
 		y = 2
-		cost = 10
+		cost = 3
 		prerequisite = { focus = GAT_NF_tuar }
 		completion_reward = {
+			add_ideas = GAT_rosianiyorusien
         }
     }
 
@@ -58,31 +59,56 @@ focus_tree = {
 		icon = GFX_focus_POL_complete_april_constitution
 		x = 9
 		y = 3
-		cost = 10
+		cost = 3
 		prerequisite = { focus = GAT_NF_sien }
-        completion_reward = {
-			country_event = { id = GATibents.2 days = 1 }
-          
-        }
-    }
-	
-	#ハクスブルク帝国
-	focus = { 
-		id = GAT_NF_hakusuburuku
-		icon = GFX_focus_ger_revive_kaiserreich
-		x = 16
-		y = 0
-		cost = 10
-		prerequisite = {
-			focus = G
-		}
-		mutually_exclusive = {
-			focus = n
-		}
 		completion_reward = {
-          
+			country_event = { id = GATibents.2 }
+			hidden_effect = {
+			  news_event = { id = GATnews.1 }
+            }
         }
     }
+
+	#オーストリアの回収
+	focus = { 
+		id = GAT_NF_kyuuryoukaisyu
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 25
+		y = 6
+		cost = 3
+		prerequisite = { focus = GAT_NF_toransirubania }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = AUS
+				expire = 0
+				generator = { 4 }
+			}
+        }
+    }
+
+	#トランシルバニアの回収
+	focus = { 
+		id = GAT_NF_toransirubania
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 25
+		y = 5
+		cost = 3
+		prerequisite = { focus = GAT_NF_hangariinokaisyu }
+		prerequisite = { focus = GAT_NF_tyekonokaisyu }
+		completion_reward = {
+			custom_effect_tooltip = "トランシルバニアを回収する"
+			hidden_effect = {
+				76  = { owner = GAT }
+				84  = { owner = GAT }
+				83  = { owner = GAT }
+				82  = { owner = GAT }
+				764 = { owner = GAT }
+				45 = { owner = GAT }
+			}
+		}
+    }
+
 
 	#自国自己解決（イベント「自国自己解決」効果安定度上昇
 	focus = { 
@@ -101,26 +127,32 @@ focus_tree = {
 	#カール手形（効果国民精神「カール手形」（メフォのパクリ）
 	focus = { 
 		id = GAT_NF_kaartegata
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_focus_generic_industry_3
 		x = 11
 		y = 2
-		cost = 10
+		cost = 3
 		prerequisite = { focus = GAT_NF_zikokaiketu }
         completion_reward = {
-          
+			add_timed_idea = {
+				idea = GAT_karrutegata
+				days = 180
+			}
         }
     }
 	
 	#借金は踏み倒す物（効果国民精神「国債」安定度低下戦争協力度上昇
 	focus = { 
 		id = GAT_NF_syakinnhahumitaosumono
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_goal_generic_consumer_goods
 		x = 11
 		y = 3
-		cost = 10
+		cost = 3
 		prerequisite = { focus = GAT_NF_kaartegata }
         completion_reward = {
-          
+			add_timed_idea = {
+				idea = GAT_kokusai
+				days = 180
+			}
         }
     }
 
@@ -130,7 +162,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		x = 5
 		y = 0
-		cost = 10
+		cost = 5
         completion_reward = {
 			army_experience = 30
 			add_doctrine_cost_reduction = {
@@ -147,7 +179,7 @@ focus_tree = {
 		icon = GFX_goal_generic_small_arms
 		x = 5
 		y = 1
-		cost = 10
+		cost = 5
         prerequisite = { focus = GAT_NF_garituarikugun }
 		completion_reward = {
 			add_tech_bonus = {
@@ -172,7 +204,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_motorized
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
         prerequisite = { focus = GAT_NF_garituarikugun }
 		completion_reward = {
 			add_tech_bonus = {
@@ -189,7 +221,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		x = 7
 		y = 1
-		cost = 10
+		cost = 5
         prerequisite = { focus = GAT_NF_garituarikugun }
 		completion_reward = {
 			add_tech_bonus = {
@@ -209,7 +241,13 @@ focus_tree = {
 		x = 5
 		y = 2
 		cost = 10
-        completion_reward = {
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
 			navy_experience = 30 
         }
     }
@@ -272,6 +310,129 @@ focus_tree = {
 		}
 	}
    }
+
+   focus = {
+	id = GAT_NF_aviation
+	icon = GFX_goal_generic_build_airforce
+	x = 5
+	y = 4
+	cost = 5
+	complete_tooltip = {
+		air_experience = 25
+		if = { limit = { has_country_flag = aviation_effort_AB }
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}			
+		add_doctrine_cost_reduction = {
+			name = air_doc_bonus
+			cost_reduction = 0.5
+			uses = 1
+			category = air_doctrine
+		}			
+	}
+
+	completion_reward = {
+		air_experience = 25
+
+		if = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				ROOT = { set_country_flag = aviation_effort_AB }
+			}
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+			}
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				ROOT = { set_country_flag = aviation_effort_AB }
+			}
+		}
+		add_doctrine_cost_reduction = {
+			name = air_doc_bonus
+			cost_reduction = 0.5
+			uses = 1
+			category = air_doctrine
+		}
+	}
+ }
+
+  focus = {
+	id = GAT_NF_fighter_focus
+	icon = GFX_goal_generic_air_fighter
+	prerequisite = { focus = GAT_NF_aviation }
+	x = 4
+	y = 5
+	cost = 5
+	completion_reward = {
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 1.0
+			uses = 2
+			technology = early_fighter
+			technology = fighter1
+			technology = fighter2
+			technology = fighter3
+			technology = heavy_fighter1
+			technology = heavy_fighter2
+			technology = heavy_fighter3
+		}
+	}
+ }
+
+ focus = {
+	id = GAT_NF_aviation_effort
+	icon = GFX_goal_generic_air_bomber
+	prerequisite = { focus = GAT_NF_aviation }
+	x = 6
+	y = 5
+	cost = 5
+	completion_reward = {
+		add_tech_bonus = {
+			name = bomber_bonus
+			bonus = 1.0
+			uses = 2
+			technology = strategic_bomber1
+			technology = strategic_bomber2
+			technology = strategic_bomber3
+			category = tactical_bomber
+		}
+	}
+ }
+
 
 
    focus = {
@@ -834,5 +995,424 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
-}
 
+	focus = {
+		id = GAT_senkyo
+		icon = GFX_focus_generic_home_defense
+		x = 21
+		y = 0
+		cost = 1		
+		completion_reward = {
+			country_event = { id = GATibents.3 }
+		}
+	}
+
+	#帝国議会を設立
+	focus = {
+		id = GAT_teikokugikainoseturitusengen
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 17
+		y = 1
+		cost = 1	
+		prerequisite = { focus = GAT_senkyo }
+		mutually_exclusive = { focus = GAT_ousei }	
+		completion_reward = {
+			hidden_effect = {
+				country_event = { id = GATibents.5 days = 10 }
+			}
+		}
+	}
+
+	#共産党の勝利
+	focus = {
+		id = GAT_kyousanntou
+		icon = GFX_goal_generic_war_with_comintern
+		x = 15
+		y = 2
+		cost = 1	
+		prerequisite = { focus = GAT_teikokugikainoseturitusengen }
+		mutually_exclusive = { focus = GAT_minnsyutou }	
+		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.5
+			}
+		}
+	}
+
+	#党の支配を確立
+	focus = {
+		id = GAT_tounosihaiwokakuritu
+		icon = GFX_goal_support_communism
+		x = 15
+		y = 3
+		cost = 1	
+		prerequisite = { focus = GAT_kyousanntou }
+		completion_reward = {
+			country_event = { id = GATibents.6 days = 0 }
+			add_popularity = {
+				ideology = communism 
+				popularity = 1.0
+			}
+		}
+	}
+
+	#バルカン社会主義共和国
+	focus = {
+		id = GAT_kyousannsyugikyouwakoku
+		icon = GFX_focus_SOV_the_supreme_soviet
+		x = 15
+		y = 4
+		cost = 3	
+		prerequisite = { focus = GAT_tounosihaiwokakuritu }
+		ai_will_do = {
+			factor = 60
+		}
+	
+		bypass = {
+			has_global_flag = GER_reformed_austro_hungarian_empire
+		}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
+		#set_cosmetic_tag = GAT_syakaisyugikoku
+		
+		completion_reward = {
+			load_oob = GAT_eventsidan2
+			set_cosmetic_tag = GAT_barukankyousansyugikoku
+			152 = { add_core_of = ROOT }
+			153 = { add_core_of = ROOT }
+			4 = { add_core_of = ROOT }
+			69 = { add_core_of = ROOT }
+			9 = { add_core_of = ROOT }
+			75 = { add_core_of = ROOT }
+			74 = { add_core_of = ROOT }
+			72 = { add_core_of = ROOT }
+			70 = { add_core_of = ROOT }
+			664 = { add_core_of = ROOT }
+			71 = { add_core_of = ROOT }
+			73 = { add_core_of = ROOT }
+			76 = { add_core_of = ROOT }
+			84 = { add_core_of = ROOT }
+			82 = { add_core_of = ROOT }
+			83 = { add_core_of = ROOT }
+			764 = { add_core_of = ROOT }
+			45 = { add_core_of = ROOT }
+			102 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			109 = { add_core_of = ROOT }
+			104 = { add_core_of = ROOT }
+			804 = { add_core_of = ROOT }
+			107 = { add_core_of = ROOT }
+			105 = { add_core_of = ROOT }
+			106 = { add_core_of = ROOT }
+			44 = { add_core_of = ROOT }
+			802 = { add_core_of = ROOT }
+			803 = { add_core_of = ROOT }
+			805 = { add_core_of = ROOT }
+			81 = { add_core_of = ROOT }
+			46 = { add_core_of = ROOT }
+			77 = { add_core_of = ROOT }
+			79 = { add_core_of = ROOT }
+			766 = { add_core_of = ROOT }
+			78 = { add_core_of = ROOT }
+			48 = { add_core_of = ROOT }
+			212 = { add_core_of = ROOT }
+			211 = { add_core_of = ROOT }
+			801 = { add_core_of = ROOT }
+			185 = { add_core_of = ROOT }
+			731 = { add_core_of = ROOT }
+			184 = { add_core_of = ROOT }
+			47 = { add_core_of = ROOT }
+			186 = { add_core_of = ROOT }
+			182 = { add_core_of = ROOT }
+			155 = { add_core_of = ROOT }
+			154 = { add_core_of = ROOT }
+			43 = { add_core_of = ROOT }
+		}
+	}
+
+	#失われたバルカン半島を回収
+	focus = { 
+		id = GAT_NF_usibarukaisyu
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 15
+		y = 5
+		cost = 1
+		prerequisite = { focus = GAT_kyousannsyugikyouwakoku }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = SLO
+				expire = 0
+				generator = { 71 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = CZE
+				expire = 0
+				generator = { 75 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = HUN
+				expire = 0
+				generator = { 43 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = AUS
+				expire = 0
+				generator = { 4 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = TRA
+				expire = 0
+				generator = { 83 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				expire = 0
+				generator = { 104 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = BUL
+				expire = 0
+				generator = { 48 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = GRE
+				expire = 0
+				generator = { 185 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = ALB
+				expire = 0
+				generator = { 44 }
+			}
+			hidden_effect = {
+				country_event = { id = GATibents.7 days = 100 }
+            }
+
+        }
+    }
+
+	#民主党の勝利
+	focus = {
+		id = GAT_minnsyutou
+		icon = GFX_goal_support_democracy
+		x = 19
+		y = 2
+		cost = 1	
+		prerequisite = { focus = GAT_teikokugikainoseturitusengen }
+		mutually_exclusive = { focus = GAT_kyousanntou }	
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.5
+			}
+		}
+	}
+
+	#絶対王政
+	focus = {
+		id = GAT_ousei
+		icon = GFX_focus_hun_elect_a_king
+		x = 25
+		y = 1
+		cost = 1		
+		prerequisite = { focus = GAT_senkyo }
+		mutually_exclusive = { focus = GAT_teikokugikainoseturitusengen }	
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality 
+				popularity = 1.0
+			}
+		}
+	}
+
+	#世界に冠たるハクスブルク家（国民精神追加と師団の追加）
+	focus = {
+		id = GAT_hakusuburukuke
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 25
+		y = 2
+		cost = 10
+		prerequisite = { focus = GAT_ousei }
+		completion_reward = {
+			country_event = { id = GATibents.4 days = 1 }
+			add_ideas = GAT_hakusuburukunoseisin
+		}
+	}
+
+	#スロバキア旧領の回収
+	focus = { 
+		id = GAT_NF_surobakiakaisyuu
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 25
+		y = 3
+		cost = 10
+		prerequisite = { focus = GAT_hakusuburukuke }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = SLO
+				expire = 0
+				generator = { 71 }
+			}
+        }
+    }
+
+	#チェコ領の回収
+	focus = { 
+		id = GAT_NF_tyekonokaisyu
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 24
+		y = 4
+		cost = 3
+		prerequisite = { focus = GAT_NF_surobakiakaisyuu }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = CZE
+				expire = 0
+				generator = { 75 }
+			}
+        }
+    }
+
+	#ハンガリーの回収
+	focus = { 
+		id = GAT_NF_hangariinokaisyu
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 26
+		y = 4
+		cost = 3
+		prerequisite = { focus = GAT_NF_surobakiakaisyuu }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = HUN
+				expire = 0
+				generator = { 43 }
+			}
+        }
+    }
+	
+	#二重帝国の再興
+	focus = {
+	 id = GAT_NF_teikokuhukkau
+	 icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+	 prerequisite = { focus = GAT_NF_kyuuryoukaisyu }
+	 x = 25
+	 y = 7
+
+	 cost = 3
+
+	 ai_will_do = {
+		factor = 60
+	 }
+
+	 available = {
+		controls_state = 152
+		controls_state = 153
+		controls_state = 4
+		is_subject = no
+	 }
+
+	 bypass = {
+		has_global_flag = GER_reformed_austro_hungarian_empire
+	 }
+
+	 cancel_if_invalid = yes
+	 continue_if_invalid = no
+	 available_if_capitulated = no
+
+	 search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
+	 completion_reward = {
+		set_cosmetic_tag = HUN_EMPIRE
+		hidden_effect = { AUS = { set_cosmetic_tag = AUS_NOT_WHITE } }
+		152 = { add_core_of = ROOT }
+		153 = { add_core_of = ROOT }
+		4 = { add_core_of = ROOT }
+		69 = { add_core_of = ROOT }
+		9 = { add_core_of = ROOT }
+		75 = { add_core_of = ROOT }
+		74 = { add_core_of = ROOT }
+		72 = { add_core_of = ROOT }
+		70 = { add_core_of = ROOT }
+		664 = { add_core_of = ROOT }
+		71 = { add_core_of = ROOT }
+		73 = { add_core_of = ROOT }
+		76 = { add_core_of = ROOT }
+		84 = { add_core_of = ROOT }
+		82 = { add_core_of = ROOT }
+		83 = { add_core_of = ROOT }
+		764 = { add_core_of = ROOT }
+		45 = { add_core_of = ROOT }
+		102 = { add_core_of = ROOT }
+		103 = { add_core_of = ROOT }
+		109 = { add_core_of = ROOT }
+		104 = { add_core_of = ROOT }
+		804 = { add_core_of = ROOT }
+		107 = { add_core_of = ROOT }
+		155 = { add_core_of = ROOT }
+		154 = { add_core_of = ROOT }
+		43 = { add_core_of = ROOT }
+
+		set_capital = 4
+
+		hidden_effect = {
+			news_event = { id = news.295 }
+		}
+		set_global_flag = form_austria_hungary_flag
+		set_global_flag = GER_reformed_austro_hungarian_empire	
+		hidden_effect = {
+			news_event = { id = GATnews.1 days = 500 }
+			country_event = { id = GATnews.1 days = 500 }
+			add_timed_idea = {
+				idea = GAT_minzoku
+			}
+		}
+	 }
+	}
+
+	#ユーゴスラビア領内の旧領の回収
+	focus = { 
+		id = GAT_NF_yugokaisyu
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 25
+		y = 8
+		cost = 3
+		prerequisite = { focus = GAT_NF_teikokuhukkau }
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				expire = 0
+				generator = { 83 }
+			}
+        }
+    }
+
+}
