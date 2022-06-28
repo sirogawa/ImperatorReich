@@ -1,0 +1,16 @@
+﻿add_namespace = SINibents
+
+country_event ={
+	id = SINibents.1
+	title = SINibents.1.t
+	desc = SINibents.1.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.1.a
+		country_event = {
+			id = mynews.5
+			days = 1
+		}
+	}
+}

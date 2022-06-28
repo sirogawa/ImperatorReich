@@ -21,8 +21,223 @@ country_event ={
 	option = {
 		name = GATibents.2.a
 		add_stability = 0.10
-		hidden_effect = {
-			news_event = { hours = 1 id = GATnews.1 }
+	}
+}
+
+country_event ={
+	id = GATibents.4
+	title = GATibents.4.t
+	desc = GATibents.4.d
+	picture = GFX_report_event_hitler_parade
+	is_triggered_only = yes
+	option = {
+		name = GATibents.4.a
+		load_oob = GAT_eventsidan
+	}
+}
+
+#国家社会主義者が革命を起こす
+country_event ={
+	id = GATibents.5
+	title = GATibents.5.t
+	desc = GATibents.5.d
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	#鎮圧
+	option = {
+		name = GATibents.5.a
+	}
+	#鎮圧されず
+	option = {
+		name = GATibents.5.b
+		GAT = { 
+			load_focus_tree = GATkakure_focus
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.5
+			}
 		}
 	}
 }
+
+country_event ={
+	id = GATibents.6
+	title = GATibents.6.t
+	desc = GATibents.6.d
+	picture = GFX_report_event_british_inspect_troops
+	is_triggered_only = yes
+
+	option = {
+		name = GATibents.6.a
+	}
+}
+
+#崩壊イベント
+country_event ={
+	id = GATibents.7
+	title = GATibents.7.t
+	desc = GATibents.7.d
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+
+	trigger = {
+		802 = { NOT = { is_controlled_by = YUG } }
+		212 = { NOT = { is_controlled_by = BUL } }
+		74 = { NOT = { is_controlled_by = GRE } }
+		44 = { NOT = { is_controlled_by = ALB } }
+		152 = { NOT = { is_controlled_by = AUS } }
+		802 = { NOT = { is_controlled_by = CZE } }
+		802 = { NOT = { is_controlled_by = ROM } }
+	}
+
+	option = {
+		name = GATibents.7.a
+		remove_ideas = AUS_MINZOKUMONDAI
+		set_cosmetic_tag = GAT_garituxia
+		end_puppet = BOS
+		hidden_effect = {
+		 155 = {
+	      remove_core_of = AUS
+         }
+		 43 = {
+	      remove_core_of = AUS
+         }
+	     154 = {
+	      remove_core_of = AUS
+         }
+		 664 = {
+	      remove_core_of = AUS
+         }
+		 73 = {
+	      remove_core_of = AUS
+         }
+		 70 = {
+	      remove_core_of = AUS
+         }
+		 71 = {
+	      remove_core_of = AUS
+         }
+		 764 = {
+	     remove_core_of = AUS
+         }
+		 45 = {
+	      remove_core_of = AUS
+         }
+		 109 = {
+	      remove_core_of = AUS
+         }
+		 103 = {
+	      remove_core_of = AUS
+         }
+	    }
+	   release = HUN
+	   release = YUG
+	   release = TRA
+	   release = SLO
+	   release = CZE
+	   release = BUL
+	   release = GRE
+	   release = ALB
+	   release = ROM
+	   release = AUS
+	   release = GAT
+	   hidden_effect = {
+		HUN = {
+		 transfer_state = 764
+		}
+	   }
+	 country_event = {
+	  id = GATnews.2
+	  days = 0
+     }
+	 GAT = { 
+		load_focus_tree = generic_focus
+	 } 
+	 HUN = {
+		country_event = {
+			id = HUN
+			days = 13
+		}
+	 }
+
+    }
+}
+
+country_event = {
+	id = GATibents.8
+	title = GATibents.8.t
+	desc = GATibents.8.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = GATibents.8.a
+		76 = {
+			if = {
+				limit = { is_owned_by = ROM }
+				add_core_of = GAT
+			}
+		}
+		84 = {
+			if = {
+				limit = { is_owned_by = ROM }
+				add_core_of = GAT
+			}
+		}
+		83 = {
+			if = {
+				limit = { is_owned_by = ROM }
+				add_core_of = GAT
+			}
+		}
+		82 = {
+			if = {
+				limit = { is_owned_by = ROM }
+				add_core_of = GAT
+			}
+		}
+		ROM = {
+			every_unit_leader = {
+				set_nationality = GAT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GATibents.9
+	title = GATibents.9.t
+	desc = GATibents.9.d
+	picture = GFX_report_event_hitler_parade
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = GATibents.9.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -25
+				GER = { has_army_size = { size < 40 } }
+			}
+			modifier = {
+				add = 100
+				GER = { has_army_size = { size > 39 } }
+			}
+			modifier = {
+				add = 20
+				is_in_faction_with = GAT
+			}
+		}
+		GAT = {
+			country_event = { days = 2 id = GATibents.8 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+}
+		

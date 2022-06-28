@@ -1,13 +1,82 @@
-﻿add_namespace = news
+﻿add_namespace = mynews
 
+#ミンスク会議
 news_event ={
-	id = GATnews.1
-	title = GATnews.1.t
-	desc = GATnews.1.d
+	id = mynews.1
+	title = mynews.1.t
+	desc = mynews.1.d
 	picture = GFX_news_event_019
-	major = yes
 	is_triggered_only = yes
 	option = {
-		name = GATnews.1.a
+		name = mynews.1.a
+		trigger = {
+			NOT = {
+				TAG = GAT
+				TAG = SOV
+			}
+		}
+		option = {
+			name = mynews.1.b
+			trigger = { TAG = SOV }
+		}
+		option = {
+			name = mynews.1.c
+			trigger = { TAG = GAT }
+		}
+
+	}
+}
+
+#バルカン社会主義共和国の崩壊
+news_event ={
+	id = mynews.2
+	title = mynews.2.t
+	desc = mynews.2.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	option = {
+		name = mynews.2.a
+	}
+}
+
+news_event ={
+	id = mynews.3
+	title = mynews.3.t
+	desc = mynews.3.d
+	picture = GFX_news_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = mynews.1.a
+	}
+}
+
+#ロシア領国家独立戦争
+news_event ={
+	id = mynews.4
+	title = mynews.4.t
+	desc = mynews.4.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	option = {
+		name = mynews.4.a
+		hidden_effect = {
+			SOV = {
+				country_event = {
+					id = SOVibents.4
+					days = 13
+				}
+			}
+		}
+	}
+}
+
+news_event ={
+	id = mynews.5
+	title = mynews.5.t
+	desc = mynews.5.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	option = {
+		name = mynews.5.a
 	}
 }
