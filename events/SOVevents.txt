@@ -93,11 +93,9 @@ country_event ={
 				add_to_faction = LIT
 			}
 
-			every_country = {
-				news_event = {
-					id = mynews.4
-					days = 1
-				}
+			news_event = {
+				id = mynews.4
+				days = 1
 			}
 			
 		}
