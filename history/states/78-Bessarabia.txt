@@ -8,7 +8,9 @@ state=
 	
 	history= {
 		add_core_of = MOL
-		owner = ROM
+		add_core_of = SOV
+		add_core_of = UKR
+		owner = SOV
 		victory_points = {
 			3707 1
 		}

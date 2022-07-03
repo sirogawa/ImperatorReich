@@ -9,7 +9,7 @@ country_event ={
 	option = {
 		name = SINibents.1.a
 		country_event = {
-			id = mynews.1
+			id = mynews.5
 			days = 1
 		}
 	}
