@@ -1,0 +1,21 @@
+﻿add_namespace = ENGibents
+
+country_event ={
+	id = ENGibents.1
+	title = ENGibents.1.t
+	desc = ENGibents.1.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = ENGibents.1.a
+		SOV = {
+			country_event = {
+				id = SOVibents.3
+				days = 13
+			}
+		}
+	}
+}
+
+
+

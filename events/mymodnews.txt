@@ -59,14 +59,6 @@ news_event ={
 	is_triggered_only = yes
 	option = {
 		name = mynews.4.a
-		hidden_effect = {
-			SOV = {
-				country_event = {
-					id = SOVibents.4
-					days = 13
-				}
-			}
-		}
 	}
 }
 

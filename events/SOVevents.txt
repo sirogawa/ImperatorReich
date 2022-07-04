@@ -99,6 +99,13 @@ country_event ={
 					days = 1
 				}
 			}
+
+			SOV = {
+				country_event = {
+					id = SOVibents.4
+					days = 13
+				}
+			}
 			
 		}
 	}
