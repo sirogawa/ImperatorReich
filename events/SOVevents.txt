@@ -10,11 +10,13 @@ country_event ={
 	option = {
 		name = SOVibents.1.a
 		add_stability = 0.10
+		set_country_flag = SOV_HOSYUA
 	}
 	#改革派
 	option = {
 		name = SOVibents.1.b
 		add_stability = -0.10
+		set_country_flag = SOV_HOSYUB
 	}
 }
 
@@ -186,5 +188,58 @@ country_event ={
 				message = EXAMPLE
 			}
 		}
+	}
+}
+
+#御前会議
+country_event ={
+	id = SOVibents.6
+	title = SOVibents.6.t
+	desc = SOVibents.6.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.6.a
+		hidden_effect = {
+			country_event = {
+				id = SOVibents.7
+				days = 1
+			}
+		}
+		set_country_flag = SOV_KETUDAN
+	}
+	option = {
+		name = SOVibents.6.b
+		hidden_effect = {
+			country_event = {
+				id = SOVibents.8
+				days = 1
+			}
+		}
+		set_country_flag = SOV_KETUDANN
+	}
+}
+
+#皇帝の決断
+country_event ={
+	id = SOVibents.7
+	title = SOVibents.7.t
+	desc = SOVibents.7.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.7.a
+	}
+}
+
+#若きツァーリの決断
+country_event ={
+	id = SOVibents.8
+	title = SOVibents.8.t
+	desc = SOVibents.8.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.8.a
 	}
 }
