@@ -1,0 +1,21 @@
+ideas = {
+	country = {
+
+		SOV_yoseatume = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = ger_revive_the_kaiserreich
+
+			modifier = {
+				attack_bonus_against = -0.50
+				defense_bonus_against = -0.50
+			}
+		}
+
+	}
+}

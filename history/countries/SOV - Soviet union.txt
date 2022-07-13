@@ -131,12 +131,13 @@ set_popularities = {
 	neutrality = 60
 }
 #ペトログラード条約機構
-create_faction = PTO
+create_faction = ペトログラード条約機構
 add_to_faction = GER
 add_to_faction = GAT
+add_to_faction = SIN
 
 recruit_character = SOV_tuari_arekusei
 recruit_character = SOV_syakaiminsyutou
-recruit_character = SOV_reinin
+recruit_character = SOV_torotuki
 
 

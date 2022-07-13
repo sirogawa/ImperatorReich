@@ -131,8 +131,11 @@ set_popularities = {
 	neutrality = 18
 }
 
-create_faction = NATO
+create_faction = 協商
 add_to_faction = ENG
+add_to_faction = FRA
+add_to_faction = BEL
+add_to_faction = LUX
 
 recruit_character = WGR_teodooru_hoisu
 recruit_character = WGR_konrato_adenauar

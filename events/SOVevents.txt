@@ -1,0 +1,181 @@
+﻿add_namespace = SOVibents
+
+country_event ={
+	id = SOVibents.1
+	title = SOVibents.1.t
+	desc = SOVibents.1.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	#保守派
+	option = {
+		name = SOVibents.1.a
+		add_stability = 0.10
+	}
+	#改革派
+	option = {
+		name = SOVibents.1.b
+		add_stability = -0.10
+	}
+}
+
+country_event ={
+	id = SOVibents.2
+	title = SOVibents.2.t
+	desc = SOVibents.2.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.2.a
+		hidden_effect = { 
+		 add_tech_bonus = {
+		 	name = nuclear_bonus
+		 	ahead_reduction = 3
+		 	category = nuclear
+		 }
+		}
+	}
+	option = {
+		name = SOVibents.2.b
+	}
+}
+
+#ロシア領国家独立戦争
+country_event ={
+	id = SOVibents.3
+	title = SOVibents.3.t
+	desc = SOVibents.3.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.3.a
+		hidden_effect = { 
+
+			release = POL
+			release = FIN
+			release = EST
+			release = LAT
+			release = LIT
+			release = UKR
+
+			SOV = {
+				#寄せ集めの軍隊　効果は戦争中の国家すべてに攻撃力-25
+				add_ideas = SOV_yoseatume
+			}
+
+			POL = {
+				load_oob = POL_sidan
+			}
+
+			FIN = {
+				load_oob = FIN_sidan
+			}
+
+			EST = {
+				load_oob = EST_sidan
+			}
+			
+			LAT = {
+				load_oob = LAT_sidan
+			}
+
+			LIT = {
+				load_oob = LIT_sidan
+			}
+
+			UKR = {
+				load_oob = UKR_sidan
+				set_rule = { can_create_factions = yes }
+				create_faction = ロシア領国家独立条約
+				add_to_faction = POL
+				add_to_faction = FIN
+				add_to_faction = EST
+				add_to_faction = LAT
+				add_to_faction = LIT
+			}
+
+			news_event = {
+				id = mynews.4
+				days = 1
+			}
+			
+		}
+	}
+}
+
+#開戦
+country_event ={
+	id = SOVibents.4
+	title = SOVibents.4.t
+	desc = SOVibents.4.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.4.a
+
+		POL = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+
+		FIN = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+
+		EST = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+		
+		LAT = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+
+		LIT = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+
+		UKR  = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+
+		country_event = {
+			id = SOVibents.5
+			days = 30
+		}
+
+	}
+}
+
+country_event ={
+	id = SOVibents.5
+	title = SOVibents.5.t
+	desc = SOVibents.5.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.5.a
+		hidden_effect = { 
+			white_peace = UKR
+			white_peace = {
+				tag = UKR
+				message = EXAMPLE
+			}
+		}
+	}
+}
