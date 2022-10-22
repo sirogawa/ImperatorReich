@@ -1,0 +1,206 @@
+ideas = {
+	country = {
+
+		UKR_gunkaku = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_industrial_complex_factor = -0.1
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = 0.15
+			}
+		}
+
+		UKR_kidousen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+
+			modifier = {
+				army_armor_speed_factor = 0.05
+				army_armor_attack_factor = 0.2
+			}
+		}
+
+		UKR_sensya = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_license_production
+
+			modifier = {
+				army_armor_speed_factor = 0.01
+			}
+		}
+
+		UKR_zangousen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_license_production
+
+			modifier = {
+				dig_in_speed = 0.25
+				winter_attrition_factor = -0.5
+				defence = 0.1
+			}
+		}
+
+		UKR_zangousen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_license_production
+
+			modifier = {
+				max_dig_in = 1
+				army_org = 5
+			}
+		}
+
+		UKR_karyoku = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments
+
+			modifier = {
+				army_infantry_attack_factor = 0.05
+				army_artillery_attack_factor = 0.15
+			}
+		}
+
+		UKR_karyokuB = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments
+
+			modifier = {
+				army_infantry_defence_factor = 0.1
+				army_artillery_defence_factor = 0.05
+				supply_consumption_factor = 0.05
+			}
+		}
+
+		UKR_hokyuu = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments
+
+			modifier = {
+				supply_consumption_factor = -0.20
+				attrition = -0.2
+			}
+		}
+
+		UKR_kantaiseibi = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_coastal_defense_ships2
+
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				production_speed_dockyard_factor = 0.2
+			}
+		}
+
+		UKR_kantaikkesen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_coastal_defense_ships2
+
+			modifier = {
+				navy_capital_ship_defence_factor = 0.1
+				naval_coordination = 0.01
+				navy_submarine_attack_factor = 0.2
+				navy_capital_ship_attack_factor = 0.05
+				navy_screen_attack_factor = 0.05
+			}
+		}
+
+		UKR_kaigundentou = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_coastal_defense_ships2
+
+			modifier = {
+				navy_max_range_factor = -0.5
+				naval_retreat_chance = -0.2
+			}
+		}
+
+		UKR_kuugun = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_payment
+
+			modifier = {
+				army_bonus_air_superiority_factor = 0.05
+				air_night_penalty = -0.1
+				air_weather_penalty = -0.1
+				air_ace_generation_chance_factor = 0.10
+				enemy_army_bonus_air_superiority_factor = -0.05
+			}
+		}
+
+	}
+}
