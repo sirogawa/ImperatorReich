@@ -1,0 +1,15 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_mustard_gas_tech_medium"
+		texturefile = "gfx/interface/technologies/chemical_weapons/mustard_gas_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_chlorine_gas_tech_medium"
+		texturefile = "gfx/interface/technologies/chemical_weapons/chlorine_gas_equipment.dds"
+	}
+	SpriteType = {
+		name = "GFX_diphosgene_tech_medium"
+		texturefile = "gfx/interface/technologies/chemical_weapons/diphosgene_equipment_1.dds"
+	}
+
+}

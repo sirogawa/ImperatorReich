@@ -51,7 +51,6 @@ country_event ={
 	option = {
 		name = GATibents.5.b
 		GAT = { 
-			load_focus_tree = GATkakure_focus
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no
@@ -167,77 +166,14 @@ country_event ={
     }
 }
 
-country_event = {
-	id = GATibents.8
-	title = GATibents.8.t
-	desc = GATibents.8.d
-	picture = GFX_report_event_german_speech
-
+country_event ={
+	id = GATibents.10
+	title = GATibents.10.t
+	desc = GATibents.10.d
+	picture = GFX_report_event_czech_soldiers_01
 	is_triggered_only = yes
-
 	option = {
-		name = GATibents.8.a
-		76 = {
-			if = {
-				limit = { is_owned_by = ROM }
-				add_core_of = GAT
-			}
-		}
-		84 = {
-			if = {
-				limit = { is_owned_by = ROM }
-				add_core_of = GAT
-			}
-		}
-		83 = {
-			if = {
-				limit = { is_owned_by = ROM }
-				add_core_of = GAT
-			}
-		}
-		82 = {
-			if = {
-				limit = { is_owned_by = ROM }
-				add_core_of = GAT
-			}
-		}
-		ROM = {
-			every_unit_leader = {
-				set_nationality = GAT
-			}
-		}
+		name = GATibents.10.a
+		ENG = { add_to_faction = GAT }
 	}
 }
-
-country_event = {
-	id = GATibents.9
-	title = GATibents.9.t
-	desc = GATibents.9.d
-	picture = GFX_report_event_hitler_parade
-
-	is_triggered_only = yes
-
-	option = { # Accept
-		name = GATibents.9.a
-		ai_chance = {
-			base = 30
-			modifier = {
-				add = -25
-				GER = { has_army_size = { size < 40 } }
-			}
-			modifier = {
-				add = 100
-				GER = { has_army_size = { size > 39 } }
-			}
-			modifier = {
-				add = 20
-				is_in_faction_with = GAT
-			}
-		}
-		GAT = {
-			country_event = { days = 2 id = GATibents.8 }
-		}
-		custom_effect_tooltip = GAME_OVER_TT
-	}
-}
-		

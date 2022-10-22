@@ -99,12 +99,12 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = "トランシルバニアを回収する"
 			hidden_effect = {
-				76  = { owner = GAT }
-				84  = { owner = GAT }
-				83  = { owner = GAT }
-				82  = { owner = GAT }
-				764 = { owner = GAT }
-				45 = { owner = GAT }
+				set_state_owner = 76
+				set_state_owner = 84
+				set_state_owner = 83
+				set_state_owner = 82
+				set_state_owner = 764
+				set_state_owner = 45				
 			}
 		}
     }
@@ -1017,9 +1017,6 @@ focus_tree = {
 		prerequisite = { focus = GAT_senkyo }
 		mutually_exclusive = { focus = GAT_ousei }	
 		completion_reward = {
-			hidden_effect = {
-				country_event = { id = GATibents.5 days = 10 }
-			}
 		}
 	}
 
@@ -1056,7 +1053,7 @@ focus_tree = {
 			country_event = { id = GATibents.6 days = 0 }
 			add_popularity = {
 				ideology = communism 
-				popularity = 1.0
+				popularity = 10.0
 			}
 		}
 	}
@@ -1226,6 +1223,105 @@ focus_tree = {
 			add_popularity = {
 				ideology = democratic 
 				popularity = 0.5
+			}
+		}
+	}
+
+	#バルカン諸国との関係改善
+	focus = {
+		id = GAT_barukan
+		icon = GFX_goal_support_democracy
+		x = 19
+		y = 3
+		cost = 1	
+		prerequisite = { focus = GAT_minnsyutou }
+		completion_reward = {
+			ROM = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = ROM modifier = SOV_gaikousei }
+			CZE = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = CZE modifier = SOV_gaikousei }
+			AUS = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = AUS modifier = SOV_gaikousei }
+			HUN = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = HUN modifier = SOV_gaikousei }
+			YUG = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = YUG modifier = SOV_gaikousei }
+			BUL = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = BUL modifier = SOV_gaikousei }
+			ALB = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = ROM modifier = SOV_gaikousei }
+			GRE = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = GRE modifier = SOV_gaikousei }
+			SLO = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = SLO modifier = SOV_gaikousei }
+		}
+	}
+
+	#英国との対話
+	focus = {
+		id = GAT_igirisu
+		icon = GFX_goal_support_democracy
+		x = 19
+		y = 4
+		cost = 1	
+		prerequisite = { focus = GAT_barukan }	
+		completion_reward = {
+			ENG = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = ENG modifier = SOV_gaikousei }
+		}
+	}
+
+	#仏との対話
+	focus = {
+		id = GAT_huransu
+		icon = GFX_goal_support_democracy
+		x = 19
+		y = 5
+		cost = 1	
+		prerequisite = { focus = GAT_igirisu }	
+		completion_reward = {
+			FRA = { add_opinion_modifier = { target = ROOT modifier = SOV_gaikousei } }
+			add_opinion_modifier = { target = FRA modifier = SOV_gaikousei }
+		}
+	}
+
+	#バルカン協商
+	focus = {
+		id = GAT_barukyou
+		icon = GFX_goal_support_democracy
+		x = 18
+		y = 6
+		cost = 1	
+		prerequisite = { focus = GAT_huransu }	
+		mutually_exclusive = { focus = GAT_kamei }
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = BARUKANKYOUSYOU
+			add_to_faction = ROM
+			add_to_faction = CZE 
+			add_to_faction = AUS
+			add_to_faction = HUN
+			add_to_faction = YUG
+			add_to_faction = BUL
+			add_to_faction = ALB
+			add_to_faction = GRE 
+			add_to_faction = SLO
+		}
+	}
+
+	#協商に加盟
+	focus = {
+		id = GAT_kamei
+		icon = GFX_goal_support_democracy
+		x = 20
+		y = 6
+		cost = 1	
+		prerequisite = { focus = GAT_huransu }	
+		mutually_exclusive = { focus = GAT_barukyou }
+		completion_reward = {
+			country_event = {
+				id = GATibents.10
+				days = 3
 			}
 		}
 	}

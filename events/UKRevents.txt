@@ -1,0 +1,68 @@
+﻿add_namespace = UKRibents
+
+country_event ={
+	id = UKRibents.1
+	title = UKRibents.1.t
+	desc = UKRibents.1.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	#民衆は政府を支持した
+	option = {
+		name = UKRibents.1.a
+		add_stability = 0.10
+		set_country_flag = UKR_SENKYOA
+	}
+	#蜂起軍は民衆からの支持を得た
+	option = {
+		name = UKRibents.1.b
+		add_stability = -0.10
+		set_country_flag = SOV_SENKYOB
+	}
+}
+
+#судья
+country_event ={
+	id = UKRibents.2
+	title = UKRibents.2.t
+	desc = UKRibents.2.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = UKRibents.2.a
+	}
+}
+
+country_event ={
+	id = UKRibents.3
+	title = UKRibents.3.t
+	desc = UKRibents.3.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = UKRibents.3.a
+		add_state_core = 218
+		add_state_core = 245
+		add_state_core = 265
+		add_state_core = 240
+		add_state_core = 260
+		add_state_core = 220
+		set_state_owner = 218
+		set_state_owner = 245
+		set_state_owner = 265
+		set_state_owner = 240
+		set_state_owner = 260
+		set_state_owner = 220
+	}
+}
+
+country_event ={
+	id = UKRibents.4
+	title = UKRibents.4.t
+	desc = UKRibents.4.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = UKRibents.4.a
+	}
+}
+

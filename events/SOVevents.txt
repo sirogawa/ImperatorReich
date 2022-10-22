@@ -10,11 +10,13 @@ country_event ={
 	option = {
 		name = SOVibents.1.a
 		add_stability = 0.10
+		set_country_flag = SOV_HOSYUA
 	}
 	#改革派
 	option = {
 		name = SOVibents.1.b
 		add_stability = -0.10
+		set_country_flag = SOV_HOSYUB
 	}
 }
 
@@ -93,9 +95,22 @@ country_event ={
 				add_to_faction = LIT
 			}
 
-			news_event = {
-				id = mynews.4
-				days = 1
+			every_country = {
+				news_event = {
+					id = mynews.4
+					days = 1
+				}
+			}
+
+			SOV = {
+				country_event = {
+					id = SOVibents.4
+					days = 13
+				}
+				country_event = {
+					id = SOVibents.10
+					days = 2
+				}
 			}
 			
 		}
@@ -158,7 +173,6 @@ country_event ={
 			id = SOVibents.5
 			days = 30
 		}
-
 	}
 }
 
@@ -179,3 +193,93 @@ country_event ={
 		}
 	}
 }
+
+#御前会議
+country_event ={
+	id = SOVibents.6
+	title = SOVibents.6.t
+	desc = SOVibents.6.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.6.a
+		hidden_effect = {
+			country_event = {
+				id = SOVibents.7
+				days = 1
+			}
+		}
+		set_country_flag = SOV_KETUDAN
+	}
+	option = {
+		name = SOVibents.6.b
+		hidden_effect = {
+			country_event = {
+				id = SOVibents.8
+				days = 1
+			}
+		}
+		set_country_flag = SOV_KETUDANN
+	}
+}
+
+#皇帝の決断
+country_event ={
+	id = SOVibents.7
+	title = SOVibents.7.t
+	desc = SOVibents.7.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.7.a
+	}
+}
+
+#若きツァーリの決断
+country_event ={
+	id = SOVibents.8
+	title = SOVibents.8.t
+	desc = SOVibents.8.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.8.a
+	}
+}
+
+country_event ={
+	id = SOVibents.10
+	title = SOVibents.10.t
+	desc = SOVibents.10.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = SOVibents.10.a
+	}
+	option = {
+		name = SOVibents.10.b
+		hidden_effect = {
+			UKR = {
+				change_tag_from = SOV
+			}
+		}
+	}
+}
+
+#貴族の処遇
+country_event ={
+	id = SOVibents.9
+	title = SOVibents.9.t
+	desc = SOVibents.9.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		#我が帝国に貴族は不要だ
+		name = SOVibents.9.a
+	}
+	option = {
+		#維持しておけ
+		name = SOVibents.9.b
+	}
+}
+

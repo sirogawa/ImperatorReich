@@ -1,0 +1,55 @@
+﻿add_namespace = JAPevents
+
+#米内内閣成立
+country_event ={
+	id = JAPevents.1
+	title = JAPevents.1.t
+	desc = JAPevents.1.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = JAPevents.1.a
+		hidden_effect = {
+			set_country_flag = JAP_YONAINAIKAKU
+		}
+		JAP_yonai={
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event ={
+	id = JAPevents.2
+	title = JAPevents.2.t
+	desc = JAPevents.2.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = JAPevents.2.a
+		set_country_flag = JAP_MINSYU
+	}
+	option = {
+		name = JAPevents.2.b
+		set_country_flag = JAP_SENSYU
+	}
+}
+
+country_event ={
+	id = JAPevents.0
+	title = JAPevents.0.t
+	desc = JAPevents.0.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = JAPevents.0.a
+	}
+}
+

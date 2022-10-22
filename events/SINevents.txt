@@ -8,9 +8,204 @@ country_event ={
 	is_triggered_only = yes
 	option = {
 		name = SINibents.1.a
-		country_event = {
-			id = mynews.5
-			days = 1
+		retire_character = MAN_aisin_gioro_puyi
+		every_country = {
+			country_event = {
+				id = mynews.5
+				days = 1
+			}
+		}
+	}
+}
+
+country_event ={
+	id = SINibents.2
+	title = SINibents.2.t
+	desc = SINibents.2.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.2.a
+		PRC = {
+			declare_war_on = {
+				target = XSM
+				type = annex_everything
+			}
+		}
+		SIN = {
+			declare_war_on = {
+				target = XSM
+				type = annex_everything
+			}
+		}
+		country_event = { id = SINibents.3 days = 7 }
+	}
+}
+
+country_event ={
+	id = SINibents.3
+	title = SINibents.3.t
+	desc = SINibents.3.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.3.a
+		SIN = {
+			add_state_core = 756
+			add_state_core = 755
+			add_state_core = 604
+			set_state_owner = 756
+			set_state_owner = 755
+			set_state_owner = 604
+		}
+		PRC = {
+			add_state_core = 616
+			add_state_core = 283
+			add_state_core = 754
+			add_state_core = 753
+			add_state_core = 283
+			set_state_owner = 616
+			set_state_owner = 283
+			set_state_owner = 754
+			set_state_owner = 753
+			set_state_owner = 283
+		}
+		country_event = { id = SINibents.4 days = 5 }
+	}
+}
+
+country_event ={
+	id = SINibents.4
+	title = SINibents.4.t
+	desc = SINibents.4.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.4.a
+		SIN = {
+			declare_war_on = {
+				target = PRC
+				type = annex_everything
+			}
+		}
+		set_rule = { can_create_factions = yes }
+		create_faction = 大清帝国
+		load_oob = SIN_1936
+		PRC = {
+			load_oob = PRC_1939
+		}
+		country_event = { id = SINibents.5 days = 60 }
+	}
+}
+
+country_event ={
+	id = SINibents.5
+	title = SINibents.5.t
+	desc = SINibents.5.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.5.a
+		random_list = {
+			50 = { 
+				SIN = { 
+					load_oob = SIN_1936 
+					country_event = { id = SINibents.6 days = 14 }
+				} 
+			}
+			50 = { 
+				PRC = {
+					load_oob = PRC_1939 
+					country_event = { id = SINibents.7 days = 14 }
+				} 
+			}
+		}
+	}
+}
+
+country_event ={
+	id = SINibents.6
+	title = SINibents.6.t
+	desc = SINibents.6.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.6.a
+		add_state_core = 616
+		add_state_core = 283
+		add_state_core = 754
+		add_state_core = 753
+		add_state_core = 622
+		add_state_core = 615
+		add_state_core = 621
+		add_state_core = 746
+		add_state_core = 612
+		add_state_core = 611
+		annex_country = { target = PRC }
+		hidden_effect = {
+			CHI = {
+				country_event = { id = SINibents.9 days = 140 }
+			}
+		}
+	}
+}
+
+country_event ={
+	id = SINibents.7
+	title = SINibents.7.t
+	desc = SINibents.7.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.7.a
+		add_state_core = 756
+		add_state_core = 755
+		add_state_core = 604
+		add_state_core = 759
+		add_state_core = 760
+		add_state_core = 618
+		add_state_core = 617
+		add_state_core = 619
+		add_state_core = 287
+		annex_country = { target = SIN }
+		hidden_effect = {
+			CHI = {
+				country_event = { id = SINibents.8 days = 140 }
+			}
+		}
+	}
+}
+
+country_event ={
+	id = SINibents.8
+	title = SINibents.8.t
+	desc = SINibents.8.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.8.a
+		CHI = {
+			declare_war_on = {
+				target = PRC
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event ={
+	id = SINibents.9
+	title = SINibents.9.t
+	desc = SINibents.9.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = SINibents.9.a
+		CHI = {
+			declare_war_on = {
+				target = SIN
+				type = annex_everything
+			}
 		}
 	}
 }

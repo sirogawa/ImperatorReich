@@ -9,21 +9,6 @@ news_event ={
 	is_triggered_only = yes
 	option = {
 		name = mynews.1.a
-		trigger = {
-			NOT = {
-				TAG = GAT
-				TAG = SOV
-			}
-		}
-		option = {
-			name = mynews.1.b
-			trigger = { TAG = SOV }
-		}
-		option = {
-			name = mynews.1.c
-			trigger = { TAG = GAT }
-		}
-
 	}
 }
 
@@ -59,14 +44,6 @@ news_event ={
 	is_triggered_only = yes
 	option = {
 		name = mynews.4.a
-		hidden_effect = {
-			SOV = {
-				country_event = {
-					id = SOVibents.4
-					days = 13
-				}
-			}
-		}
 	}
 }
 
@@ -78,5 +55,22 @@ news_event ={
 	is_triggered_only = yes
 	option = {
 		name = mynews.5.a
+	}
+}
+
+#第二次世界大戦
+news_event ={
+	id = mynews.6
+	title = mynews.6.t
+	desc = mynews.6.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	trigger = {	
+		GER = { has_offensive_war_with = ENG }
+		GER = { has_offensive_war_with = FRA }
+		GER = { has_offensive_war_with = WGR }
+	}
+	option = {
+		name = mynews.6.a
 	}
 }

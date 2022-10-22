@@ -24,5 +24,20 @@ spriteTypes = {
 		name = "GFX_kaaru"
 		texturefile = "gfx/leaders/GAT/kaaruitisei.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_kyousantou"
+		texturefile = "gfx/leaders/SOV/a0974-zy0aq.dds"
+	}
+
+	spriteType = {
+		name = "GFX_gikai"
+		texturefile = "gfx/leaders/SOV/akggx-g48vw.dds"
+	}
+
+	spriteType = {
+		name = "GFX_arekusei"
+		texturefile = "gfx/leaders/SOV/auhrw-8ajud.dds"
+	}
 
 }

@@ -1,0 +1,45 @@
+ideas = {
+	country = {
+		
+		hukyouA = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			modifier = {
+				consumer_goods_factor = 0.5
+				production_factory_efficiency_gain_factor = -0.5
+				production_factory_start_efficiency_factor = -0.5
+				production_speed_buildings_factor = -0.5
+				production_speed_arms_factory_factor = -0.5
+				production_speed_industrial_complex_factor = -0.5
+			}
+		}
+
+		hukyouB = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			modifier = {
+				consumer_goods_factor = 0.5
+				production_factory_efficiency_gain_factor = -0.15
+				production_factory_start_efficiency_factor = -0.15
+				production_speed_buildings_factor = -0.10
+				production_speed_arms_factory_factor = -0.10
+				production_speed_industrial_complex_factor = -0.10
+			}
+		}
+
+	}
+}
