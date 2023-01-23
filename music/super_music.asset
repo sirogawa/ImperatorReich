@@ -1,0 +1,13 @@
+music = {
+	name = "super_ww2"
+	file = "ww2.ogg"
+}
+music = {
+	name = "GER_War"
+	file = "Super_GER_War.ogg"
+}
+
+music = {
+	name = "SOV_War"
+	file = "Super_SOV_War.ogg"
+}

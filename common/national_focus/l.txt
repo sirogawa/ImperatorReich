@@ -1,0 +1,56 @@
+focus_tree = {
+	id = GEA_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = ELS
+		}
+	}
+	
+
+	default = no
+
+	focus = {
+		id = A_NF_one
+		icon = GFX_focus_ETH_the_abuna
+		x = 0
+		y = 0
+		cost = 10
+		available = {
+			is_ai = no 
+			is_subject = no
+		}
+        completion_reward = {
+			custom_effect_tooltip = "A_NF_oneT"
+			hidden_effect = {
+				country_event = {
+					id = libents.1
+					days = 1
+				}
+				add_ideas = AA
+			}
+
+		}
+	}
+
+	focus = {
+		id = A_NF_
+		icon = GFX_focus_generic_annex_country_2
+		x = 0
+		y = 1
+		cost = 3650
+		available = {
+			is_ai = no 
+			is_subject = no
+		}
+		prerequisite = { focus = A_NF_one }
+		coreetion_reward = {
+			custom_effect_tooltip = "A_NF_TT"
+			hidden_effect = {
+			}
+		}
+    }
+
+}

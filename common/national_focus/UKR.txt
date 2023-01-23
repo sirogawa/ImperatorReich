@@ -1,0 +1,729 @@
+focus_tree = {
+	id = UKR_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = UKR
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1200 }
+
+	focus = {
+		id = UKR_NF_one
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 0
+		cost = 1
+        completion_reward = {
+			political_power_factor = 0.15
+			country_event = {
+				id = UKRibents.1
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_houkigun
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 10
+		y = 1
+		cost = 1
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = SOV_SENKYOB
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = { focus = UKR_NF_minsyu }
+		prerequisite = { focus = UKR_NF_one }
+        completion_reward = {
+			political_power_factor = 0.15
+			set_political_party = {
+				ideology = fascism
+				popularity = 0.5
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_saiseiseihu
+		icon = GFX_focus_generic_little_entente
+		x = 10
+		y = 2
+		cost = 5
+		prerequisite = { focus = UKR_NF_houkigun }
+        completion_reward = {
+			set_politics = {
+				parties = {
+					democratic = {
+						popularity = 0
+					}
+					fascism = {
+						popularity = 100
+					}
+					communism = {
+						popularity = 0
+					}
+					neutrality = {
+						popularity = 0
+					}
+				}
+				ruling_party = fascism
+				banned = democratic
+				banned = communism
+				banned = neutrality
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = UKR_HOUKIGUN
+				name = UKR_HOUKIGUN_MINI
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_hukkou
+		icon = GFX_goal_generic_construction
+		x = 10
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_saiseiseihu }
+        completion_reward = {
+			stability_factor = 0.10
+        }
+    }
+
+	focus = {
+		id = UKR_NF_sangyou
+		icon = GFX_goal_generic_production
+		x = 10
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_hukkou }
+        completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_gunzi
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 10
+		y = 5
+		cost = 5
+		prerequisite = { focus = UKR_NF_sangyou }
+        completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+					not = {
+						OR = {
+							state = 88
+							state = 81
+							state = 91
+						}
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_gunkaku
+		icon = GFX_focus_generic_combined_arms
+		x = 10
+		y = 6
+		cost = 5
+		prerequisite = { focus = UKR_NF_gunzi }
+        completion_reward = {
+			add_ideas = UKR_gunkaku 
+			set_country_flag = SOV_GUNZIKAIKAKU
+        }
+    }
+
+	focus = {
+		id = UKR_NF_sentoukeikaku
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 10
+		y = 7
+		cost = 5
+		available = {
+			has_country_flag = SOV_GUNZIKAIKAKUED
+		}
+		prerequisite = { focus = UKR_NF_gunkaku }
+        completion_reward = {
+			country_event = {
+				id = UKRibents.2
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kurimiasenryou
+		icon = GFX_goal_anschluss
+		x = 10
+		y = 8
+		cost = 5
+		prerequisite = { focus = UKR_NF_sentoukeikaku }
+        completion_reward = {
+			set_state_owner = 137
+			add_state_core = 137
+        }
+    }
+
+	focus = {
+		id = UKR_NF_POLsen
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 10
+		y = 10
+		cost = 5
+		prerequisite = { focus = UKR_NF_kurimiasenryou }
+        completion_reward = {
+        }
+    }
+
+	focus = {
+		id = UKR_NF_POLtorihiki
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 10
+		y = 11
+		cost = 5
+		prerequisite = { focus = UKR_NF_POLsen }
+        completion_reward = {
+        }
+    }
+
+	focus = {
+		id = UKR_NF_k
+		icon = GFX_goal_anschluss
+		x = 8
+		y = 10
+		cost = 5
+		prerequisite = { focus = UKR_NF_kurimiasenryou }
+        completion_reward = {
+        }
+    }
+
+	focus = {
+		id = UKR_NF_SOVsen
+		icon = GFX_focus_attack_soviet
+		x = 12
+		y = 10
+		cost = 5
+		prerequisite = { focus = UKR_NF_kurimiasenryou }
+        completion_reward = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_SOVkouwa
+		icon = GFX_focus_generic_treaty
+		x = 12
+		y = 11
+		cost = 5
+		available = {
+			has_country_flag = SOV_KOUWA
+		}
+		prerequisite = { focus = UKR_NF_SOVsen }
+        completion_reward = {
+			white_peace = SOV
+			white_peace = {
+				tag = SOV
+				message = EXAMPLE
+			}
+			country_event = {
+				id = UKRibents.4
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_touti
+		icon = GFX_focus_generic_military_mission
+		x = 12
+		y = 12
+		cost = 5
+		prerequisite = { focus = UKR_NF_SOVkouwa }
+        completion_reward = {
+			country_event = {
+				id = UKRibents.3
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_rikugun
+		icon = GFX_goal_generic_army_doctrines
+		x = 18
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = UKR_GUNZIKAIKAKU
+		}
+        completion_reward = {
+			army_experience = 30
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kidousen
+		icon = GFX_focus_generic_army_tanks2
+		x = 18
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = UKR_NF_zangousen focus = UKR_NF_karyoku }
+		prerequisite = { focus = UKR_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kidousenA
+		icon = GFX_goal_generic_army_tanks
+		x = 18
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_kidousen }
+        completion_reward = {
+			add_ideas = UKR_kidousen
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kidousenB
+		icon = GFX_focus_generic_combined_arms
+		x = 18
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_kidousenA }
+        completion_reward = {
+			add_ideas = UKR_sensya
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_mass_assault
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_zangousen
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 16
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = UKR_NF_kidousen focus = UKR_NF_karyoku }
+		prerequisite = { focus = UKR_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = infantry
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_zangousenA
+		icon = GFX_goal_generic_military_sphere
+		x = 16
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_zangousen }
+        completion_reward = {
+			add_ideas = UKR_zangousen
+        }
+    }
+
+	focus = {
+		id = UKR_NF_zangousenB
+		icon = GFX_focus_focus_fra_maquis
+		x = 16
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_zangousenA }
+        completion_reward = {
+			add_ideas = UKR_zangousenB
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_karyoku
+		icon = GFX_goal_generic_army_artillery2
+		x = 20
+		y = 2
+		cost = 1
+		mutually_exclusive = { focus = UKR_NF_kidousen focus = UKR_NF_zangousen }
+		prerequisite = { focus = UKR_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_karyokuA
+		icon = GFX_focus_secret_rearmament
+		x = 20
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_karyoku }
+        completion_reward = {
+			add_ideas = UKR_karyoku
+        }
+    }
+
+	focus = {
+		id = UKR_NF_karyokuB
+		icon = GFX_focus_generic_air_defense
+		x = 20
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_karyokuA }
+        completion_reward = {
+			add_ideas = UKR_karyokuB
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_superior_firepower
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_hokyu
+		icon = GFX_focus_SOV_the_road_of_life
+		x = 18
+		y = 5
+		cost = 5
+		prerequisite = { focus = UKR_NF_karyokuB focus = UKR_NF_zangousenB focus = UKR_NF_kidousenB }
+        completion_reward = {
+			add_ideas = UKR_hokyuu
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kaigun
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 23
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = UKR_GUNZIKAIKAKU
+		}
+        completion_reward = {
+			navy_experience = 30 
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 1.0
+				uses = 1
+				category = navy_doctrine
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_sensuikan
+		icon = GFX_goal_generic_navy_submarine
+		x = 22
+		y = 2
+		cost = 5
+		prerequisite = { focus = UKR_NF_kaigun }
+		mutually_exclusive = { focus = UKR_NF_kantai }
+        completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kantai
+		icon = GFX_focus_generic_navy_battleship2
+		x = 24
+		y = 2
+		cost = 5
+		prerequisite = { focus = UKR_NF_kaigun }
+		mutually_exclusive = { focus = UKR_NF_sensuikan }
+        completion_reward = {
+			add_ideas = UKR_kantaiseibi
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kantaikkessen
+		icon = GFX_goal_generic_navy_battleship
+		x = 23
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_kantai focus = UKR_NF_sensuikan }
+        completion_reward = {
+			add_ideas = UKR_kantaikkesen
+        }
+    }
+
+	focus = {
+		id = UKR_NF_dentou
+		icon = GFX_focus_generic_military_mission
+		x = 23
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_kantaikkessen }
+        completion_reward = {
+			add_ideas = UKR_kaigundentou
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kuugun
+		icon = GFX_goal_generic_air_doctrine
+		x = 27
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = UKR_GUNZIKAIKAKU
+		}
+        completion_reward = {
+			air_experience = 25
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_sentouki
+		icon = GFX_goal_generic_air_fighter
+		x = 26
+		y = 2
+		cost = 5
+		prerequisite = { focus = UKR_NF_kuugun }
+        completion_reward = {
+			add_tech_bonus = {
+				name = JAP_fighter_modernization
+				bonus = 1.0
+				uses = 1
+				category = light_fighter		
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kinsetu
+		icon = GFX_goal_generic_occupy_start_war
+		x = 28
+		y = 2
+		cost = 5
+		prerequisite = { focus = UKR_NF_kuugun }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber			
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_bakugeki
+		icon = GFX_goal_generic_air_bomber
+		x = 27
+		y = 3
+		cost = 5
+		prerequisite = { focus = UKR_NF_kinsetu focus = UKR_NF_sentouki }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kuugunseisin
+		icon = GFX_goal_generic_CAS
+		x = 27
+		y = 4
+		cost = 5
+		prerequisite = { focus = UKR_NF_bakugeki }
+        completion_reward = {
+			add_ideas = UKR_kuugun
+        }
+    }
+
+	focus = {
+		id = UKR_NF_kaikakukanryou
+		icon = GFX_focus_generic_support_the_left_right
+		x = 23
+		y = 6
+		cost = 5
+		prerequisite = { focus = UKR_NF_kuugunseisin focus = UKR_NF_dentou focus = UKR_NF_hokyu }
+        completion_reward = {
+			set_country_flag = SOV_GUNZIKAIKAKUED
+        }
+    }
+
+	focus = {
+		id = UKR_NF_minsyu
+		icon = GFX_goal_support_communism
+		x = -10
+		y = 1
+		cost = 1
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = UKR_SENKYOA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = { focus = UKR_NF_houkigun }
+		prerequisite = { focus = UKR_NF_one }
+        completion_reward = {
+			set_political_party = {
+				ideology = democratic
+				popularity = 0.5
+			}
+        }
+    }
+
+
+}

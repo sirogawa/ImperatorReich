@@ -1,0 +1,6 @@
+personal_union_everywhere_category = {
+    priority = 0
+    visible = {
+        num_subjects > 0
+    }
+}

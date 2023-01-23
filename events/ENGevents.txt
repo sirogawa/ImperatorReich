@@ -8,12 +8,7 @@ country_event ={
 	is_triggered_only = yes
 	option = {
 		name = ENGibents.1.a
-		SOV = {
-			country_event = {
-				id = SOVibents.3
-				days = 13
-			}
-		}
+		recall_attache = GER
 	}
 }
 

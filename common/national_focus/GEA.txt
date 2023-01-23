@@ -1,0 +1,1299 @@
+focus_tree = {
+	id = GEA_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = GEA
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 1500 }
+
+	focus = {
+		id = GEA_NF_one
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 10
+		y = 0
+		cost = 3
+		available = {
+			is_subject = no
+			has_full_control_of_state = 65
+			has_full_control_of_state = 59
+			has_full_control_of_state = 58
+		}
+        completion_reward = {
+			custom_effect_tooltip = "ドイツは平和を取り戻す"
+			set_cosmetic_tag = GEA_commun
+			hidden_effect = {
+				GER = {
+					remove_state_core = 52
+					remove_state_core = 50
+					remove_state_core = 53
+					remove_state_core = 42
+					remove_state_core = 55
+					remove_state_core = 51
+					remove_state_core = 56
+					remove_state_core = 57
+					remove_state_core = 59
+					remove_state_core = 58				
+					remove_state_core = 60
+					remove_state_core = 61
+					remove_state_core = 62
+					remove_state_core = 63
+					remove_state_core = 64
+					remove_state_core = 65
+					remove_state_core = 66
+					remove_state_core = 67
+					remove_state_core = 68
+					remove_state_core = 5
+					remove_state_core = 763
+					remove_state_core = 85
+					remove_state_core = 807
+					remove_state_core = 86
+					remove_state_core = 42
+					remove_state_core = 28
+					remove_state_core = 909
+					remove_state_core = 910
+					remove_state_core = 911
+					remove_state_core = 54
+				}
+				set_capital = {state = 64 }
+				add_state_core = 52
+				add_state_core = 50
+				add_state_core = 53
+				add_state_core = 42
+				add_state_core = 55
+				add_state_core = 51
+				add_state_core = 56
+				add_state_core = 57
+				add_state_core = 59
+				add_state_core = 58
+				add_state_core = 60
+				add_state_core = 61
+				add_state_core = 62
+				add_state_core = 63
+				add_state_core = 64
+				add_state_core = 65
+				add_state_core = 66
+				add_state_core = 67
+				add_state_core = 68
+				add_state_core = 5
+				add_state_core = 763
+				add_state_core = 85
+				add_state_core = 807
+				add_state_core = 86
+				add_state_core = 42
+				add_state_core = 28
+				add_state_core = 909
+				add_state_core = 910
+				add_state_core = 911
+				add_state_core = 54
+				annex_country = { target = GER transfer_troops = yes }
+				annex_country = { target = GEB transfer_troops = yes }
+				annex_country = { target = GEC transfer_troops = yes }
+				country_event = {
+					id = GERibents.8
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GEA_NF_senkyo
+		icon = GFX_focus_SOV_the_supreme_soviet
+		x = 10
+		y = 1
+		cost = 3
+		prerequisite = { focus = GEA_NF_one }
+		available = {
+			is_subject = no
+		}
+		coreetion_reward = {
+			country_event = {
+				id = GEAibents.3
+				days = 1
+			}
+			remove_state_coree_ideas = {
+				GEA_naisen
+				GEA_naisen2
+			}
+			hidden_effecremove_state_corey_controlled_state = {
+				set_variable = { FROM.remove_core_target_state = THIS }
+				for_each_scope_loop = {
+					array = FROM.remove_core_target_state:core_countries
+					remove_state_core = FROM.remove_core_target_state
+				}
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_senkyoA
+		icon = GFX_focus_ger_reichskommisariats
+		x = 1
+		y = 2
+		cost = 1
+		bypass = {
+			has_country_flag = GEA_senkyoA
+		}
+		available = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = GEA_NF_senkyo }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_hitrA
+		icon = GFX_focus_mex_arrest_general_cedillo
+		x = 1
+		y = 3
+		cost = 3
+		prerequisite = { focus = GEA_NF_senkyoA }
+        completion_reward = {
+			country_event = {
+				id = GEAibents.4
+				days = 1
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanA
+		icon = GFX_focus_ger_reichskommisariats
+		x = 1
+		y = 5
+		cost = 10
+		prerequisite = { focus = GEA_NF_hitrA }
+        completion_reward = {
+			add_ideas = GEA_gerumania
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanB
+		icon = GFX_focus_generic_industry_3
+		x = -1
+		y = 6
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanA }
+        completion_reward = {
+			add_tech_bonus = {
+				name = GER_autarky
+				bonus = 1.0
+				uses = 2
+				technology = excavation1
+				technology = excavation2
+				technology = excavation3
+				technology = excavation4
+				technology = excavation5
+			}
+			add_ideas = GER_autarky_idea
+			add_tech_bonus = {
+				name = GER_four_year_plan
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanD
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 7
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanB }
+        completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanE
+		icon = GFX_goal_generic_construct_civilian
+		x = -2
+		y = 8
+		cost = 4
+		prerequisite = { focus = GEA_NF_gerumanD }
+        completion_reward = {
+			custom_effect_tooltip = GER_autobahn_tt
+			hidden_effect = {
+				64 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				59 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				60 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				54 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+			}	
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanF
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 8
+		cost = 4
+		prerequisite = { focus = GEA_NF_gerumanD }
+        completion_reward = {
+			add_ideas = GER_grosraumwirtschaft
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanH
+		icon = GFX_focus_ger_reichskommisariats
+		x = -1
+		y = 9
+		cost = 3
+		prerequisite = { focus = GEA_NF_gerumanE }
+		prerequisite = { focus = GEA_NF_gerumanF }
+        completion_reward = {
+			add_ideas = GEA_douro
+			add_ideas = GEA_keikakukeizai
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanC
+		icon = GFX_focus_ger_oppose_hitler
+		x = 3
+		y = 6
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanA }
+        completion_reward = {
+			add_ideas = GEA_sanbouhonbu
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanI
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+		x = 2
+		y = 8
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanK }
+		mutually_exclusive = { focus = GEA_NF_gerumanJ }
+        completion_reward = {
+			add_ideas = GEA_kidou
+			set_country_flag = GEA_gunzi
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanJ
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 4
+		y = 8
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanK }
+		mutually_exclusive = { focus = GEA_NF_gerumanI }
+        completion_reward = {
+			
+			add_ideas = GEA_karyoku
+			set_country_flag = GEA_gunzi
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanK
+		icon = GFX_focus_generic_little_entente
+		x = 3
+		y = 7
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanC }
+        completion_reward = {
+			add_ideas = GEA_tyouhei
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanL
+		icon = GFX_focus_ger_reichskommisariats
+		x = 3
+		y = 9
+		cost = 3
+		prerequisite = { focus = GEA_NF_gerumanJ focus = GEA_NF_gerumanI }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanM
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		x = 1
+		y = 10
+		cost = 10
+		prerequisite = { focus = GEA_NF_gerumanL }
+		prerequisite = { focus = GEA_NF_gerumanH }
+        completion_reward = {
+			country_event = {
+				id = GEAibents.5
+				days = 1
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanAA
+		icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+		x = 1
+		y = 11
+		cost = 3
+		available = {
+			has_completed_focus = GEA_NF_gerumanM
+		}
+		prerequisite = { focus = GEA_NF_gerumanM }
+        completion_reward = {
+			add_ideas = GEA_gerumania2
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanAB
+		icon = GFX_goal_anschluss
+		x = 1
+		y = 12
+		cost = 3
+		available = {
+			#has_country_flag = GEA_gerumaniaenzetu
+			has_completed_focus = GEA_NF_gerumanM
+		}
+		prerequisite = { focus = GEA_NF_gerumanAA }
+        completion_reward = {
+			country_event = {
+				id = GEAibents.6
+				days = 1
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanAC
+		icon = GFX_focus_POL_sanation_right
+		x = 1
+		y = 13
+		cost = 1
+		available = {
+			#has_country_flag = GEA_gerumaniaenzetu
+			has_completed_focus = GEA_NF_gerumanM
+		}
+		prerequisite = { focus = GEA_NF_gerumanAB }
+        completion_reward = {
+			add_timed_idea = {
+				idea = GEA_taihun
+				days = 200
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_gerumanAD
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 1
+		y = 13
+		cost = 3
+		allow_branch = {
+			#has_country_flag = GEA_gerumaniaenzetu
+			has_completed_focus = GEA_NF_gerumanM
+		}
+		prerequisite = { focus = GEA_NF_gerumanAC }
+        completion_reward = {
+			declare_war_on = {
+				target = WGR
+				type = annex_everything
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_senkyoB
+		icon = GFX_focus_generic_join_comintern
+		x = 19
+		y = 2
+		cost = 1
+		bypass = {
+			has_country_flag = GEA_senkyoB
+		}
+		available = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = GEA_NF_senkyo }
+        completion_reward = {
+			add_country_leader_role = {
+				character = GEA_rukusen
+				promote_leader = yes
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuA
+		icon = GFX_focus_generic_soviet_politics
+		x = 19
+		y = 3
+		cost = 1
+		bypass = {
+			has_country_flag = GEA_senkyoB
+		}
+		prerequisite = { focus = GEA_NF_senkyoB }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuB
+		icon = GFX_goal_generic_production2
+		x = 17
+		y = 4
+		cost = 10
+		prerequisite = { focus = GEA_NF_rukuA }
+        completion_reward = {
+			add_ideas = GER_autarky_idea
+			add_tech_bonus = {
+				name = GER_four_year_plan
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			add_tech_bonus = {
+				name = GER_autarky
+				bonus = 1.0
+				uses = 2
+				technology = excavation1
+				technology = excavation2
+				technology = excavation3
+				technology = excavation4
+				technology = excavation5
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuD
+		icon = GFX_focus_generic_industry_3
+		x = 17
+		y = 5
+		cost = 10
+		prerequisite = { focus = GEA_NF_rukuB }
+        completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuE
+		icon = GFX_goal_generic_national_unity
+		x = 17
+		y = 6
+		cost = 1
+		prerequisite = { focus = GEA_NF_rukuD }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuF
+		icon = GFX_goal_generic_construction
+		x = 16
+		y = 7
+		cost = 4
+		available = {
+			has_country_flag = GEA_douro
+		}
+		prerequisite = { focus = GEA_NF_rukuE }
+        completion_reward = {
+			custom_effect_tooltip = GER_autobahn_tt
+			hidden_effect = {
+				64 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				59 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				60 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				54 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+			}		
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuG
+		icon = GFX_goal_generic_construction2
+		x = 18
+		y = 7
+		cost = 4
+		prerequisite = { focus = GEA_NF_rukuE }
+        completion_reward = {
+			add_ideas = GER_grosraumwirtschaft
+			set_country_flag = GEA_douro
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuH
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 17
+		y = 8
+		cost = 1
+		prerequisite = { focus = GEA_NF_rukuF }
+		prerequisite = { focus = GEA_NF_rukuG }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuC
+		icon = GFX_focus_SOV_mobilization_plan
+		x = 21
+		y = 4
+		cost = 7
+		prerequisite = { focus = GEA_NF_rukuA }
+        completion_reward = {
+			add_ideas = GEA_sekigun
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuI
+		icon = GFX_focus_generic_little_entente
+		x = 21
+		y = 5
+		cost = 5
+		prerequisite = { focus = GEA_NF_rukuC }
+        completion_reward = {
+			add_ideas = GEA_tyouhei
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuJ
+		icon = GFX_focus_generic_support_the_left_right
+		x = 21
+		y = 6
+		cost = 3
+		prerequisite = { focus = GEA_NF_rukuI }
+        completion_reward = {
+			add_ideas = GEA_hukutu
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuL
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		x = 20
+		y = 7
+		cost = 10
+		prerequisite = { focus = GEA_NF_rukuJ }
+		mutually_exclusive = { focus = GEA_NF_rukuK }
+        completion_reward = {
+			add_ideas = GEA_kidou
+			set_country_flag = GEA_gunzi
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuK
+		icon = GFX_goal_generic_army_artillery2
+		x = 22
+		y = 7
+		cost = 10
+		prerequisite = { focus = GEA_NF_rukuJ }
+		mutually_exclusive = { focus = GEA_NF_rukuL }
+        completion_reward = {
+			add_ideas = GEA_karyoku
+			set_country_flag = GEA_gunzi
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuM
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 21
+		y = 8
+		cost = 1
+		prerequisite = { focus = GEA_NF_rukuK focus = GEA_NF_rukuL }
+        completion_reward = {
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuN
+		icon = GFX_goal_generic_position_armies
+		x = 19
+		y = 9
+		cost = 1
+		prerequisite = { focus = GEA_NF_rukuH }
+		prerequisite = { focus = GEA_NF_rukuM }
+        completion_reward = {
+			country_event = {
+				id = GEAibents.6
+				days = 1
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rukuS
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 19
+		y = 10
+		cost = 1
+		prerequisite = { focus = GEA_NF_rukuN }
+        completion_reward = {
+			declare_war_on = {
+				target = WGR
+				type = annex_everything
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_naisen
+		icon = GFX_focus_ger_oppose_hitler
+		x = 10
+		y = 4
+		cost = 1
+		available = {
+			is_ai = no 
+			is_subject = no
+		}
+        completion_reward = {
+			hidden_effect = {
+				country_event = {
+					id = GEAibents.1
+					days = 1
+				}
+			}
+		}
+    }
+
+	focus = {
+		id = GEA_NF_naisenA
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = 10
+		y = 5
+		cost = 2
+		prerequisite = { focus = GEA_NF_naisen }
+		available = {
+			is_ai = no 
+			is_subject = no
+		}
+        completion_reward = {
+			country_event = {
+				id = GEAibents.2
+				days = 1
+			}
+			
+		}
+    }
+
+	focus = {
+		id = GEA_NF_rikugun
+		icon = GFX_goal_generic_army_doctrines
+		x = 26
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = GEA_gunzi
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			army_experience = 30
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kidousen
+		icon = GFX_focus_generic_army_tanks2
+		x = 26
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = GEA_NF_zangousen focus = GEA_NF_karyoku }
+		prerequisite = { focus = GEA_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kidousenA
+		icon = GFX_goal_generic_army_tanks
+		x = 26
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_kidousen }
+        completion_reward = {
+			add_ideas = UKR_kidousen
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kidousenB
+		icon = GFX_focus_generic_combined_arms
+		x = 26
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_kidousenA }
+        completion_reward = {
+			add_ideas = UKR_sensya
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_mass_assault
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_zangousen
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 24
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = GEA_NF_kidousen focus = GEA_NF_karyoku }
+		prerequisite = { focus = GEA_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = infantry
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_zangousenA
+		icon = GFX_goal_generic_military_sphere
+		x = 24
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_zangousen }
+        completion_reward = {
+			add_ideas = UKR_zangousen
+        }
+    }
+
+	focus = {
+		id = GEA_NF_zangousenB
+		icon = GFX_focus_focus_fra_maquis
+		x = 24
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_zangousenA }
+        completion_reward = {
+			add_ideas = UKR_zangousenB
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_karyoku
+		icon = GFX_goal_generic_army_artillery2
+		x = 28
+		y = 2
+		cost = 1
+		mutually_exclusive = { focus = GEA_NF_kidousen focus = GEA_NF_zangousen }
+		prerequisite = { focus = GEA_NF_rikugun }
+        completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HUN_mobile_corps_doctrine
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_karyokuA
+		icon = GFX_focus_secret_rearmament
+		x = 28
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_karyoku }
+        completion_reward = {
+			add_ideas = UKR_karyoku
+        }
+    }
+
+	focus = {
+		id = GEA_NF_karyokuB
+		icon = GFX_focus_generic_air_defense
+		x = 28
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_karyokuA }
+        completion_reward = {
+			add_ideas = UKR_karyokuB
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 1
+				category = cat_superior_firepower
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_hokyu
+		icon = GFX_focus_SOV_the_road_of_life
+		x = 26
+		y = 5
+		cost = 5
+		prerequisite = { focus = GEA_NF_karyokuB focus = GEA_NF_zangousenB focus = GEA_NF_kidousenB }
+        completion_reward = {
+			add_ideas = UKR_hokyuu
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kuugun
+		icon = GFX_goal_generic_air_doctrine
+		x = 32
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = GEA_gunzi
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			air_experience = 25
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_sentouki
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 2
+		cost = 5
+		prerequisite = { focus = GEA_NF_kuugun }
+        completion_reward = {
+			add_tech_bonus = {
+				name = JAP_fighter_modernization
+				bonus = 0.5
+				uses = 1
+				category = light_fighter		
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_sentoukiA
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_sentouki }
+        completion_reward = {
+			add_tech_bonus = {
+				name = JAP_fighter_modernization
+				bonus = 0.5
+				uses = 1
+				category = light_fighter		
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_sentoukiB
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_sentoukiA }
+        completion_reward = {
+			add_tech_bonus = {
+				name = JAP_fighter_modernization
+				bonus = 0.5
+				uses = 1
+				category = light_fighter		
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kinsetu
+		icon = GFX_goal_generic_occupy_start_war
+		x = 34
+		y = 2
+		cost = 5
+		prerequisite = { focus = GEA_NF_kuugun }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber			
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kinsetuA
+		icon = GFX_goal_generic_occupy_start_war
+		x = 34
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_kinsetu }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber			
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kinsetuB
+		icon = GFX_goal_generic_occupy_start_war
+		x = 34
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_kinsetuA }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber			
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_bakugeki
+		icon = GFX_goal_generic_air_bomber
+		x = 32
+		y = 2
+		cost = 5
+		prerequisite = { focus = GEA_NF_kuugun }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_strategic_bomber
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_bakugekiA
+		icon = GFX_goal_generic_air_bomber
+		x = 32
+		y = 3
+		cost = 5
+		prerequisite = { focus = GEA_NF_bakugeki }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_strategic_bomber
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_bakugekiB
+		icon = GFX_goal_generic_air_bomber
+		x = 32
+		y = 4
+		cost = 5
+		prerequisite = { focus = GEA_NF_bakugekiA }
+        completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_strategic_bomber
+			}
+        }
+    }
+
+	focus = {
+		id = GEA_NF_kuugunseisin
+		icon = GFX_goal_generic_CAS
+		x = 32
+		y = 5
+		cost = 5
+		prerequisite = { focus = GEA_NF_sentoukiB focus = GEA_NF_bakugekiB focus = GEA_NF_kinsetuB }
+        completion_reward = {
+			add_ideas = UKR_kuugun
+        }
+    }
+}

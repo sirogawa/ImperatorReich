@@ -819,3 +819,28 @@ GAT = {
 	color = rgb { 214 102 139 }
 	color_ui = rgb { 255 120 138 }
 }
+
+SIN = {
+	color = rgb { 38 14 160 }
+	color_ui = rgb { 255 120 138 }
+}
+
+RUB = {
+	color = rgb { 64  108  8 }
+	color_ui = rgb { 255 120 138 }
+}
+
+GEA = {
+	color = HSV { 0.1 0.15 0.4 }
+	color_ui = rgb { 138 155 116 }
+}
+
+GEB = {
+	color = HSV { 0.1 0.15 0.4 }
+	color_ui = rgb { 138 155 116 }
+}
+
+GEC = {
+	color = HSV { 0.1 0.15 0.4 }
+	color_ui = rgb { 138 155 116 }
+}

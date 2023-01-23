@@ -1,0 +1,16 @@
+state={
+	id=910
+	name="STATE_910"
+	provinces={
+		3522 6487 9238 9375 11359 11468 
+	}
+	history={
+		owner = GEA
+		add_core_of = GER
+		add_core_of = WGR
+		add_core_of = GEA
+	}
+	manpower=5175029
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

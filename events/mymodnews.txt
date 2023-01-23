@@ -7,23 +7,9 @@ news_event ={
 	desc = mynews.1.d
 	picture = GFX_news_event_019
 	is_triggered_only = yes
+	major = yes
 	option = {
 		name = mynews.1.a
-		trigger = {
-			NOT = {
-				TAG = GAT
-				TAG = SOV
-			}
-		}
-		option = {
-			name = mynews.1.b
-			trigger = { TAG = SOV }
-		}
-		option = {
-			name = mynews.1.c
-			trigger = { TAG = GAT }
-		}
-
 	}
 }
 
@@ -34,6 +20,7 @@ news_event ={
 	desc = mynews.2.d
 	picture = GFX_news_event_generic_riot
 	is_triggered_only = yes
+	major = yes
 	option = {
 		name = mynews.2.a
 	}
@@ -45,6 +32,7 @@ news_event ={
 	desc = mynews.3.d
 	picture = GFX_news_event_generic_funeral
 	is_triggered_only = yes
+	major = yes
 	option = {
 		name = mynews.1.a
 	}
@@ -57,16 +45,9 @@ news_event ={
 	desc = mynews.4.d
 	picture = GFX_news_event_generic_riot
 	is_triggered_only = yes
+	major = yes
 	option = {
 		name = mynews.4.a
-		hidden_effect = {
-			SOV = {
-				country_event = {
-					id = SOVibents.4
-					days = 13
-				}
-			}
-		}
 	}
 }
 
@@ -76,7 +57,98 @@ news_event ={
 	desc = mynews.5.d
 	picture = GFX_news_event_generic_riot
 	is_triggered_only = yes
+	major = yes
 	option = {
 		name = mynews.5.a
+	}
+}
+
+#第二次世界大戦
+news_event ={
+	id = mynews.6
+	title = mynews.6.t
+	desc = mynews.6.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	major = yes
+	trigger = {	
+		GER = { has_offensive_war_with = ENG }
+		GER = { has_offensive_war_with = FRA }
+		GER = { has_offensive_war_with = WGR }
+	}
+	option = {
+		name = mynews.6.a
+	}
+}
+
+news_event ={
+	id = mynews.7
+	title = mynews.7.t
+	desc = mynews.7.d
+	picture = GFX_news_event_generic_funeral
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.7.a
+	}
+}
+
+news_event ={
+	id = mynews.8
+	title = mynews.8.t
+	desc = mynews.8.d
+	picture = GFX_news_event_herman_goring
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.8.a
+	}
+}
+
+news_event ={
+	id = mynews.9
+	title = mynews.9.t
+	desc = mynews.9.d
+	picture = GFX_news_event_herman_goring
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.9.a
+	}
+}
+
+news_event ={
+	id = mynews.10
+	title = mynews.10.t
+	desc = mynews.10.d
+	picture = GFX_news_event_herman_goring
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.10.a
+	}
+}
+
+news_event ={
+	id = mynews.11
+	title = mynews.11.t
+	desc = mynews.11.d
+	picture = GFX_news_event_polish_army
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.11.a
+	}
+}
+
+news_event ={
+	id = mynews.12
+	title = mynews.12.t
+	desc = mynews.12.d
+	picture = GFX_news_event_polish_army
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mynews.12.a
 	}
 }

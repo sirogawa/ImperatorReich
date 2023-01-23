@@ -1,0 +1,172 @@
+characters={
+	GER_adolf_hitler={
+		name=GER_adolf_hitler
+		portraits={
+			civilian={
+				large=GFX_portrait_GER_adolf_hitler
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits={ dictator }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GER_konrad_adenauer={
+		name=GER_konrad_adenauer
+		portraits={
+			civilian={
+				large=GFX_portrait_GER_konrad_adenauer
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GER_wilhelm_pieck={
+		name=GER_wilhelm_pieck
+		portraits={
+			civilian={
+				large=GFX_portrait_GER_wilhelm_pieck
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits={ exiled }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GEB_wilhelm_ii={ #Empty Wilhelm II so he doesn't become ruler automatically if the neutrals are in power
+		name=GER_wilhelm_ii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_ii"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1941.6.4.1"
+			id=-1
+		}
+	}
+	GEA_wilhelm_ii={ 
+		name=GER_wilhelm_ii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_ii"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1941.6.4.1"
+			id=-1
+		}
+	}
+	GEC_wilhelm_ii={ 
+		name=GER_wilhelm_ii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_ii"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1941.6.4.1"
+			id=-1
+		}
+	}
+
+	GER_wilhelm_iii={ #Empty Wilhelm III so he doesn't become ruler automatically if the neutrals are in power
+		name=GER_wilhelm_iii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_iii"
+			}	
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GEA_wilhelm_iii={
+		name=GER_wilhelm_iii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_iii"
+			}	
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GEB_wilhelm_iii={
+		name=GER_wilhelm_iii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_iii"
+			}	
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GEC_wilhelm_iii={
+		name=GER_wilhelm_iii
+		portraits={
+			civilian={
+				large="GFX_portrait_ger_wilhelm_iii"
+			}	
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	GEA_rukusen={
+		name=GEA_rukusen
+		portraits={
+			civilian={
+				large="GFX_portrait_GEA_rukusen"
+			}	
+		}
+		country_leader={
+			ideology=marxism
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	
+	GEB_wilhelm={
+		name=GEB_wilhelm
+		portraits={
+			civilian={
+				large="GFX_portrait_GEB_wilhelm"
+			}	
+		}
+	}
+
+}

@@ -1,0 +1,81 @@
+characters={
+	JAP_yonai={
+		name=JAP_yonai
+		portraits={
+			civilian={
+				large= GFX_yonai
+			}
+		}
+	}
+
+	SOV_syakaiminsyutou={
+		name=SOV_syakaiminsyutou
+		portraits={
+			civilian={
+				large= GFX_portrait_SOV_supreme_soviet
+			}
+		}
+		country_leader={
+			ideology= marxism
+			expire="1965.1.1.1"
+			desc="SYAKAIMINSYUTOU_DESC" 
+		}
+	}
+
+	SOV_torotuki={
+		name=SOV_torotuki
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= leninism
+			expire="1965.1.1.1"
+			desc="TOROTUKI_DESC" 
+		}
+	}
+
+	SOV_gikai={
+		name=SOV_gikai
+		portraits={
+			civilian={
+				large= GFX_gikai
+			}
+		}
+		country_leader={
+			ideology= conservatism
+			expire="1965.1.1.1"
+			desc="GIKAI_DESC" 
+		}	
+	}
+	
+	SOV_sutaarin={
+		name=SOV_sutaarin
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= stalinism
+			expire="1965.1.1.1"
+			desc="SUTARIN_DESC" 
+		}	
+	}
+	
+	SOV_hyougikai={
+		name=SOV_hyougikai
+		portraits={
+			civilian={
+				large= GFX_mfg
+			}
+		}
+		country_leader={
+			ideology= marxism
+			expire="1965.1.1.1"
+			desc="HYOUGIKAI_DESC" 
+		}	
+	}
+
+}

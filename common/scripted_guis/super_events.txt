@@ -1,0 +1,59 @@
+scripted_gui = {
+
+	sp_event_window = {
+		window_name = "sp_event_window"
+		context_type = player_context
+
+		visible = {
+			has_global_flag = Super_Event_Visible
+		}
+		
+		triggers = {
+			Super_Event_Image_Second_World_War_visible = {
+				has_global_flag = GER_WW2
+			}
+		}
+		triggers = {
+			Super_Event_GER_War_visible = {
+				has_global_flag = GER_War
+			}
+		}
+		triggers = {
+			Super_Event_SOV_War_visible = {
+				has_global_flag = SOV_War
+			}
+		}
+		
+		############
+		###BUTTON###
+		############
+		
+		effects = {
+			sp_event_close_button_click = {
+				clr_global_flag = Super_Event_Visible
+				
+				if = {
+					limit = {
+						has_global_flag = GER_WW2
+					}
+					clr_global_flag = GER_WW2
+				}
+
+				if = {
+					limit = {
+						has_global_flag = GER_War
+					}
+					clr_global_flag = GER_War
+				}
+
+				if = {
+					limit = {
+						has_global_flag = SOV_War
+					}
+					clr_global_flag = SOV_War
+				}
+
+			}
+		}
+	}
+}

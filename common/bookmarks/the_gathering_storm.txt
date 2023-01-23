@@ -1,0 +1,136 @@
+bookmarks = {
+	bookmark = {
+		name = iR_scenario_name
+		desc = iR_scenario_desc
+		date = 1936.1.1.1
+		picture = GFX_select_date_1940
+		default_country = SOV
+		default = yes
+
+		### MAJORS ###
+		USA = {
+			history = USA_gathering_storm_desc
+			ideology = market_liberal
+			ideas = {
+				USA_great_depression
+				USA_political_crisis
+			}
+			focuses = {
+				USA_democracy_triumphs
+				USA_american_caesar
+				USA_pax_americana
+			}
+		}
+
+		CAN = {
+			history = CAN_KR_gathering_storm_desc
+			ideology = market_liberal
+			ideas = {
+				CAN_anglo_french_tensions_2
+				CAN_great_depression_2
+			}
+			focuses = {
+				CAN_draft_bill_c7
+				CAN_preparations_for_war
+				CAN_canadian_referendum
+			}
+		}
+
+		ENG = {
+			history = ENG_KR_gathering_storm_desc
+			ideology = syndicalist
+			ideas = {
+				ENG_naval_devotion
+			}
+			focuses = {
+				ENG_devolution
+				ENG_evolution
+				ENG_revolution
+			}
+		}
+
+		FRA = {
+			history = FRA_KR_gathering_storm_desc
+			ideology = syndicalist
+			ideas = {
+				FRA_communard_spirit
+			}
+			focuses = {
+				FRA_Host_the_Internationale
+				FRA_War_with_germany
+				FRA_World_revolution
+			}
+		}
+
+		GER = {
+			history = GER_KR_gathering_storm_desc
+			ideology = authoritarian_democrat
+			ideas = {
+				GER_victors_of_wwi
+				GER_quenched_militarism
+			}
+			focuses = {
+				GER_black_monday_aftermath
+				GER_easter_promises
+				GER_tirpitzprogramm
+			}
+		}
+
+		AUS = {
+			history = AUS_KR_gathering_storm_desc
+			ideology = social_conservative
+			ideas = {
+				AUS_financial_ties_broken
+				AUS_k_u_k_armee_bonus
+				AUS_vienna_circle
+			}
+			focuses = {
+				AUS_status_quo
+				AUS_embrace_pluralism
+				AUS_military_occupation
+			}
+		}
+
+		SOV = {
+			history = SOV_gathering_storm_desc
+			ideology = despotism
+			ideas = {
+				RUS_political_unrest
+			}
+			focuses = {
+				GFX_focus_rom_parties_end
+			}
+		}
+
+		JAP = {
+			history = JAP_gathering_storm_desc
+			ideology = moderatism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		### MINORS ###
+
+		SRD = {
+			minor = yes
+			history = SRD_KR_gathering_storm_desc
+			ideology = paternal_autocrat
+			ideas = {
+				SRD_entente_support_1
+			}
+			focuses = {
+				SRD_maresciallo_a_noi
+				SRD_italia_riunita
+				SRD_legacy_sassari_brigade
+			}
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
+

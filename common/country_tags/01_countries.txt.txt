@@ -1,1 +1,7 @@
+KOS	= "countries/Kosovo.txt"
 GAT = "countries/GATgarituxia.txt"
+SIN = "countries/SINsinoutyou.txt"
+RUB = "countries/RUBrosiaryouisuburu.txt"
+GEA = "countries/GEA.txt"
+GEB = "countries/GEB.txt"
+GEC = "countries/GEC.txt"

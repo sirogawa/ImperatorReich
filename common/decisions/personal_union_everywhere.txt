@@ -1,0 +1,616 @@
+personal_union_everywhere_category = {
+    #同君連合化
+    PUE_set_personal_union_decision = {
+        icon = GFX_decision_SWI_no_elected_president
+        cost = 50
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+            }
+        }
+        visible = {
+            FROM = {
+                NOT = {
+                    has_autonomy_state = autonomy_personal_union
+                }
+            }
+        }
+        available = {
+            FROM = {
+                has_government = ROOT 
+            }
+        }
+        fire_only_once = no 
+        days_remove = 14
+        remove_effect = {
+            set_autonomy = {
+                target = FROM
+                autonomy_state = autonomy_personal_union
+            }
+        }
+    }
+
+######## ##     ## ########   #######  ##    ## ######## 
+   ##    ##     ## ##     ## ##     ## ###   ## ##       
+   ##    ##     ## ##     ## ##     ## ####  ## ##       
+   ##    ######### ########  ##     ## ## ## ## ######   
+   ##    ##     ## ##   ##   ##     ## ##  #### ##       
+   ##    ##     ## ##    ##  ##     ## ##   ### ##       
+   ##    ##     ## ##     ##  #######  ##    ## ######## 
+
+    #オーストリア帝位
+    PUE_austrian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = AUS
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            add_country_leader_trait = PUE_austrian_throne_trait
+        }
+    }
+
+    #ベルギー王位
+    PUE_belgian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = BEL
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            add_country_leader_trait = PUE_belgian_throne_trait
+        }
+    }
+
+    #イングランド王位
+    PUE_english_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = ENG
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            name = "Edward VIII"
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_english_throne_trait
+        }
+    }
+
+    #イギリス連邦王位
+    PUE_english_commonwealth_realm_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = ENG
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        available = {
+            any_country = {
+                tag = ENG
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = CAN
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = AST
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = NZL
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = RAJ
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = SAF
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+            any_country = {
+                tag = MAL
+                OR = {
+                    is_puppet_of = ROOT 
+                    exists = no 
+                }
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            name = "Edward VIII"
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_english_commonwealth_realm_throne_trait
+        }
+    }
+
+    #フランス王位
+    PUE_french_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = FRA
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            name = "Edward VIII"
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_french_throne_trait
+        }
+    }
+
+    #ドイツ帝位
+    PUE_german_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = GER
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        OR = {
+                            has_country_leader = {
+                                character = GER_wilhelm_ii
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                character = GER_wilhelm_iii
+                                ruling_only = yes 
+                            }
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_german_throne_trait
+        }
+    }
+
+    #オランダ王位
+    PUE_dutch_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = HOL
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = HOL_wilhelmina
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_dutch_throne_trait
+        }
+    }
+
+    #ハンガリー王位
+    PUE_hungarian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = HUN
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = HUN_franz_friedrich
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_hungarian_throne_trait
+        }
+    }
+
+    #イタリア王位
+    PUE_italian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = ITA
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+         remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = ITA_vittorio_emanuele_iii
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_italian_throne_trait
+        }
+    }
+
+    #日本皇位
+    PUE_japaense_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = JAP 
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = JAP_emperor_hirohito
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_japaense_throne_trait
+        }
+    }
+
+    #ルクセンブルク大公爵位
+    PUE_luxembourgish_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = LUX 
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            add_country_leader_trait = PUE_luxembourgish_throne_trait
+        }
+    }
+
+    #満州帝位
+    PUE_manchurian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = MAN 
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = MAN_aisin_gioro_puyi
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_manchurian_throne_trait
+        }
+    }
+
+    #ポーランド王位
+    PUE_polish_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = POL
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        OR = {
+                            has_country_leader = {
+                                character = POL_karl_albrecht
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                name = "Michał II"
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                character = POL_friedrich_christian
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                character = POL_pavel_bermondt_avalov
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                character = POL_anna_andersson
+                                ruling_only = yes 
+                            }
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_polish_throne_trait
+        }
+    }
+
+    #ルーマニア王位
+    PUE_romanian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = ROM
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            name = "Carol II"
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_romanian_throne_trait
+        }
+    }
+
+    #ロシア帝位
+    PUE_russian_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                tag = SOV 
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        has_country_leader = {
+                            character = SOV_tsar_vladimir_kirillovich
+                            ruling_only = yes 
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_russian_throne_trait
+        }
+    }
+
+    #スペイン王位
+    PUE_spanish_throne_decision = {
+        icon = GFX_decision_generic_monarchy
+        cost = 50
+        fire_only_once = yes
+        target_trigger = {
+            FROM = {
+                is_puppet_of = ROOT 
+                original_tag = SPR
+            }
+        }
+        visible = {
+            FROM = {
+                has_autonomy_state = autonomy_personal_union
+            }
+        }
+        days_remove = 14
+        remove_effect = {
+            FROM = {
+                IF = {
+                    limit = {
+                        OR = {
+                            has_country_leader = {
+                                name = "Alfonso XIII"
+                                ruling_only = yes 
+                            }
+                            has_country_leader = {
+                                name = "Jaime IV"
+                                ruling_only = yes 
+                            }
+                        }
+                    }
+                    retire_country_leader = yes
+                }
+            }
+            add_country_leader_trait = PUE_spanish_throne_trait
+        }
+    }
+}

@@ -1,0 +1,24 @@
+capital = 797
+
+set_research_slots = 5
+set_stability = 0.10
+set_war_support = 0.5
+set_convoys = 252
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1920.2.17"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 18
+	fascism = 10
+	communism = 12
+	neutrality = 60
+}
+
+#recruit_character = 
+

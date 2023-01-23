@@ -4,15 +4,14 @@ state= {
 	manpower = 3248150 
 	state_category = large_city
 	
-	history=
-	{
+	history={
 		victory_points = {
 			6389 10 
 		}
 		victory_points = {
 			9347 20
 		}
-		owner = GER
+		owner = GEC
 		buildings = {
 			infrastructure = 3
 			arms_factory = 2
@@ -24,6 +23,7 @@ state= {
 		}
 		add_core_of = GER
 		add_core_of = WGR
+		add_core_of = GEC
 		1939.1.1 = {
 			buildings = {
 				synthetic_refinery = 3

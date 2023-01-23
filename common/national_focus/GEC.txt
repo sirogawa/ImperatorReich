@@ -1,0 +1,93 @@
+focus_tree = {
+	id = GEC_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = GEC
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1200 }
+
+	focus = {
+		id = GEC_NF_one
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 0
+		cost = 3
+		available = {
+			is_subject = no
+			has_full_control_of_state = 65
+			has_full_control_of_state = 59
+			has_full_control_of_state = 58
+		}
+        completion_reward = {
+			custom_effect_tooltip = "ドイツは平和を取り戻す"
+			set_cosmetic_tag = GEB_EMPIRE
+			hidden_effect = {
+				add_state_core = 52
+				add_state_core = 50
+				add_state_core = 53
+				add_state_core = 42
+				add_state_core = 55
+				add_state_core = 51
+				add_state_core = 56
+				add_state_core = 57
+				add_state_core = 59
+				add_state_core = 58
+				add_state_core = 60
+				add_state_core = 61
+				add_state_core = 62
+				add_state_core = 63
+				add_state_core = 64
+				add_state_core = 65
+				add_state_core = 66
+				add_state_core = 67
+				add_state_core = 68
+				add_state_core = 5
+				add_state_core = 763
+				add_state_core = 85
+				add_state_core = 807
+				add_state_core = 86
+				add_state_core = 42
+				add_state_core = 28
+				add_state_core = 54
+				add_state_core = 909
+				add_state_core = 910
+				add_state_core = 911
+				every_controlled_state = {
+					set_variable = { FROM.remove_core_target_state = THIS }
+					for_each_scope_loop = {
+						array = FROM.remove_core_target_state:core_countries
+						remove_state_core = FROM.remove_core_target_state
+					}
+				}
+				clear_variable = FROM.remove_core_target_state
+				annex_country = { target = GEA transfer_troops = yes }
+				annex_country = { target = GEB transfer_troops = yes }
+				annex_country = { target = GER transfer_troops = yes }
+				country_event = {
+					id = GERibents.9
+					days = 1
+				}
+			}
+        }
+    }
+
+	focus = {
+		id = GEC_NF_saiken
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 1
+		cost = 10
+		prerequisite = { focus = GEC_NF_one }
+        completion_reward = {
+		}
+    }
+
+}

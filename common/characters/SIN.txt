@@ -1,0 +1,16 @@
+characters={
+	#SIN_koutei={
+		#name=宣統帝
+		#portraits={
+		#	civilian={
+		#		large= GFX_mfg
+		#	}
+		#}
+		#country_leader={
+		#	ideology= despotism
+		#	expire="1965.1.1.1"
+		#	desc="SINKOUTEI_DESC" 
+		#}
+	#}
+	
+}

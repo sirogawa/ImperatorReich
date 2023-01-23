@@ -1,0 +1,85 @@
+
+
+#Titles
+defined_text = {
+    name = get_super_event_title
+    #ゲルマン帝国	
+    text = {
+        trigger = {
+            has_global_flag = GER_WW2
+        }
+        localization_key = "sp_event_Second_World_War"
+    }
+    #ドイツ内戦
+    text = {
+        trigger = {
+            has_global_flag = GER_War
+        }
+        localization_key = "sp_event_GER_War"
+    }
+    #ロシア領国家独立戦争
+    text = {
+        trigger = {
+            has_global_flag = SOV_War
+        }
+        localization_key = "sp_event_SOV_War"
+    }
+
+}
+#Remarks
+defined_text = {
+    name = get_super_event_remark
+    
+    text = { 
+        trigger = {
+            has_global_flag = GER_WW2
+        }
+        localization_key = "sp_event_Second_World_War_REMARK"
+    }
+
+    text = { 
+        trigger = {
+            has_global_flag = GER_War
+        }
+        localization_key = "sp_event_GER_War_REMARK"
+    }
+
+    text = { 
+        trigger = {
+            has_global_flag = SOV_War
+        }
+        localization_key = "sp_event_SOV_War_REMARK"
+    }
+}
+#Quotes
+defined_text = {
+    name = get_super_event_quote
+    
+    text = {
+        trigger = {
+            has_global_flag = GER_WW2
+        }
+        localization_key = "sp_event_Second_World_War_QUOTE"
+    }
+
+    text = {
+        trigger = {
+            has_global_flag = GER_War
+        }
+        localization_key = "sp_event_GER_War_QUOTE"
+    }
+
+    text = {
+        trigger = {
+            has_global_flag = SOV_War
+        }
+        localization_key = "sp_event_SOV_War_QUOTE"
+    }
+
+    text = {
+        trigger = {
+            has_global_flag = SOV_War
+        }
+        localization_key = "sp_event_SOV_War_QUOTE"
+    }
+}

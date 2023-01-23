@@ -1,0 +1,7 @@
+personal_union_everywhere_category = {
+    priority = 0
+    visible = {
+        original_tag = GEA
+		has_completed_focus = GEA_NF_gerumanM
+    }
+}

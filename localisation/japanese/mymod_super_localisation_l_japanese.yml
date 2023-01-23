@@ -1,0 +1,10 @@
+﻿l_japanese:
+ sp_event_Second_World_War:0 "大ゲルマン帝国宣言" 
+ sp_event_Second_World_War_QUOTE:0 "歴史の清算こそが我々の最終目標. \n- ヨーゼフ・ゲッベルス" 
+ sp_event_Second_World_War_REMARK:0 "The new Order" 
+ sp_event_GER_War:0 "ドイツ内戦"
+ sp_event_GER_War_QUOTE:0 "現下の大問題の解決は、演説や多数決によってではなく鉄と血によってなされるのです. \n- オットー・フォン・ビスマルク"
+ sp_event_GER_War_REMARK:0 "ライヒは再び分裂した"
+ sp_event_SOV_War:0 "ロシア領国家独立戦争"
+ sp_event_SOV_War_QUOTE:0 "嗚呼、神よ！我らを助けたまえ！ \n- ニコライ2世"
+ sp_event_SOV_War_REMARK:0 "весна（春）が来た"

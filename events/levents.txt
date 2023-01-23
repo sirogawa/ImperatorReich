@@ -1,0 +1,15 @@
+﻿add_namespace = UKRibents
+
+country_event ={
+	id = libents.1
+	title = libents.1.t
+	desc = libents.1.d
+	picture = GFX_report_event_sanation_right_victory
+	is_triggered_only = yes
+	option = {
+		name = libents.1.a
+		stability_factor = -1
+		recruitable_population_factor = -1
+	}
+}
+

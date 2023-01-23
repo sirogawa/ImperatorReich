@@ -1,0 +1,15 @@
+state={
+	id=911
+	name="STATE_911"
+	provinces={
+		529 3512 6469 6570 9482 
+	}
+	history={
+		owner = WGR
+		add_core_of = GER
+		add_core_of = WGR
+	}
+	manpower=3112546
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

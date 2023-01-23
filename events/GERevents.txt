@@ -1,0 +1,455 @@
+﻿add_namespace = GERibents
+add_namespace = GEAibents
+add_namespace = GEBibents
+
+country_event ={
+	id = GERibents.1
+	title = GERibents.1.t
+	desc = GERibents.1.d
+	picture = GFX_report_event_europe_funeral
+	is_triggered_only = yes
+	option = {
+		name = GERibents.1.a
+
+		kill_country_leader = yes
+
+		GEA = { 
+			retire_character = GEA_wilhelm_ii
+		}
+
+		GEB = { 
+			retire_character = GEB_wilhelm_ii
+		}
+
+		GEC = { 
+			retire_character = GEC_wilhelm_ii
+		}
+
+		news_event = {
+			id = mynews.7
+			days = 1
+		}
+
+		country_event = {
+			id = GERibents.2
+			days = 1
+		}
+	}
+}
+
+country_event ={
+	id = GERibents.2
+	title = GERibents.2.t
+	desc = GERibents.2.d
+	picture = GFX_report_event_german_reichstag_gathering
+	is_triggered_only = yes
+	option = {
+		name = GERibents.2.a
+
+		#新皇帝が即位
+		every_country = {
+			news_event = {
+				id = mynews.12
+				days = 1
+			}
+		}
+	}
+
+	#帝国は制御できなかった
+	option = {
+		name = GERibents.2.b
+		retire_character = GER_wilhelm_iii
+		GEA = { 
+			retire_character = GEA_wilhelm_iii
+			load_oob = GEA
+		}
+		GEB = { 
+			retire_character = GEB_wilhelm_iii
+			load_oob = GEB
+		}
+		GEC = { 
+			retire_character = GEC_wilhelm_iii
+			load_oob = GEC
+		}
+		hidden_effect = {
+			GEA = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.5
+				}
+			}
+			country_event = { id = GERibents.6 days = 25 }
+			country_event = {
+				id = GERibents.3
+				days = 5
+			}
+		}
+	}
+}
+
+#ドイツ海軍ルート（ハイドリヒルート等）
+country_event ={
+	id = GERibents.3
+	title = GERibents.3.t
+	desc = GERibents.3.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+	is_triggered_only = yes
+	option = {
+		name = GERibents.3.a
+		GEC = {
+			change_tag_from = GER
+			hidden_effect = {
+				load_oob = GEC
+			}
+		}
+	}
+	option = {
+		name = GERibents.3.b
+		country_event = {
+			id = GERibents.4
+		}
+	}
+}
+
+#ハノーファールート（共産、国家社会主義ルート等）
+country_event ={
+	id = GERibents.4
+	title = GERibents.4.t
+	desc = GERibents.4.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	option = {
+		name = GERibents.4.a
+		GEA = {
+			change_tag_from = GER
+			hidden_effect = {
+				load_oob = GEA
+			}
+		}
+	}
+	option = {
+		name = GERibents.4.b
+		country_event = {
+			id = GERibents.5
+		}
+	}
+}
+
+#ザクセンルート（帝国存続ルート等）
+country_event ={
+	id = GERibents.5
+	title = GERibents.5.t
+	desc = GERibents.5.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GERibents.5.a
+		GEB = {
+			change_tag_from = GER
+			hidden_effect = {
+				load_oob = GEB
+			}
+			GEB_wilhelm = {
+				promoto = yes
+				add_country_leader_role ={
+					country_leader={
+						ideology=despotism
+						traits={ kaiserin_of_the_people }
+						expire="1965.1.1.1"
+						id=-1
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event ={
+	id = GERibents.6
+	title = GERibents.6.t
+	desc = GERibents.6.d
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+	option = {
+		name = GERibents.6.a
+
+		GER = {
+			set_rule = { can_create_factions = yes }
+			create_faction = ドイツ軍軍管区			
+		}
+
+		GEA = {
+			set_rule = { can_create_factions = yes }
+			create_faction = ドイツ労働者戦線
+			declare_war_on = {
+				target = GEB
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GEC
+				type = annex_everything
+			}
+		}
+		GEB = {
+			set_rule = { can_create_factions = yes }
+			create_faction = ドイツ帝国臨時政府
+			declare_war_on = {
+				target = GEA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GEC
+				type = annex_everything
+			}
+		}
+		GEC = {
+			set_rule = { can_create_factions = yes }
+			create_faction = ドイツ帝国海軍臨時政府
+			declare_war_on = {
+				target = GEA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GEB
+				type = annex_everything
+			}
+		}
+		country_event = {
+			id = mynews.8
+			days = 1
+		}
+        set_global_flag = GER_War
+		set_global_flag = Super_Event_Visible
+		play_song = "GER_War"
+	}
+}
+
+#帝政の勝利
+country_event ={
+	id = GERibents.7
+	title = GERibents.7.t
+	desc = GERibents.7.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = GERibents.7.a
+		hidden_effect = {
+			annex_country = { target = GEA transfer_troops = yes }
+			annex_country = { target = GEB transfer_troops = yes }
+			annex_country = { target = GEC transfer_troops = yes }
+			set_capital = {state = 64 }
+			country_event = {
+				id = mynews.9
+				days = 1
+			}
+		}
+	}
+}
+
+#赤軍の勝利
+country_event ={
+	id = GERibents.8
+	title = GERibents.8.t
+	desc = GERibents.8.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = GERibents.8.a
+		hidden_effect = {
+			annex_country = { target = GER transfer_troops = no }
+			annex_country = { target = GEB transfer_troops = no }
+			annex_country = { target = GEC transfer_troops = no }
+			set_capital = {state = 64 }
+			country_event = {
+				id = mynews.10
+				days = 1
+			}
+			set_country_flag = GEA_naisensyuryou
+		}
+	}
+}
+
+#海軍の勝利
+country_event ={
+	id = GERibents.9
+	title = GERibents.9.t
+	desc = GERibents.9.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = GERibents.9.a
+		hidden_effect = {
+			annex_country = { target = GEA transfer_troops = yes }
+			annex_country = { target = GEB transfer_troops = yes }
+			annex_country = { target = GEC transfer_troops = yes }
+			set_capital = {state = 64 }
+			country_event = {
+				id = mynews.11
+				days = 1
+			}
+		}
+	}
+}
+
+#共産主義ドイツ GEA
+
+country_event ={
+	id = GEAibents.1
+	title = GEAibents.1.t
+	desc = GEAibents.1.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = GEAibents.1.a
+		add_ideas = GEA_naisen
+	}
+}
+
+country_event ={
+	id = GEAibents.2
+	title = GEAibents.2.t
+	desc = GEAibents.2.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = GEAibents.2.a
+		add_ideas = GEA_naisen2
+		hidden_effect = {
+			load_oob = GEA
+		}
+	}
+}
+
+country_event ={
+	id = GEAibents.3
+	title = GEAibents.3.t
+	desc = GEAibents.3.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEAibents.3.a
+		set_country_flag = GEA_senkyoA
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism 
+			popularity = 0.7
+		}
+	}
+		option = {
+		name = GEAibents.3.b
+		set_country_flag = GEA_senkyoB
+	}
+}
+
+country_event ={
+	id = GEAibents.4
+	title = GEAibents.4.t
+	desc = GEAibents.4.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEAibents.4.a
+		add_manpower = -1000
+	}
+}
+
+country_event ={
+	id = GEAibents.5
+	title = GEAibents.5.t
+	desc = GEAibents.5.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEAibents.5.a
+		set_province_name = { id = 6521 name = "Germania" }
+        set_global_flag = GER_WW2
+		set_global_flag = Super_Event_Visible
+		play_song = "super_ww2"
+		#WW2 Flag
+		set_global_flag = Super_WW2
+		hidden_effect = {
+			SOV = {
+				end_puppet = PRE
+			}
+		}
+	}
+}
+
+country_event ={
+	id = GEAibents.6
+	title = GEAibents.6.t
+	desc = GEAibents.6.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEAibents.6.a
+		annex_country = { target = 	PRE }
+	}
+	option = {
+		name = GEAibents.6.b
+		declare_war_on = {
+			target = PRE
+			type = annex_everything
+		}
+		SOV = {
+			end_puppet = PRE
+		}
+		PRE = {
+			set_rule = { can_create_factions = yes }
+			create_faction = ドイツ露派貴族同盟
+		}
+	}
+}
+
+#帝政ドイツ GEB
+country_event ={
+	id = GEBibents.1
+	title = GEBibents.1.t
+	desc = GEBibents.1.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEBibents.1.a
+		annex_country = { target = 	PRE }
+		country_event = {
+			id = mynews.12
+			days = 1
+		}
+	}
+}
+
+country_event ={
+	id = GEBibents.2
+	title = GEBibents.2.t
+	desc = GEBibents.2.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEBibents.2.a
+		set_country_flag = GEB_kaikaku
+	}
+}
+
+country_event ={
+	id = GEBibents.3
+	title = GEBibents.3.t
+	desc = GEBibents.3.d
+	picture = GFX_report_event_nazis_in_danzig
+	is_triggered_only = yes
+	option = {
+		name = GEBibents.3.a
+		load_oob = GEB
+	}
+}

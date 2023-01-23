@@ -17,5 +17,118 @@ ideas = {
 			}
 		}
 
+		SOV_koukyouzigyou = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+
+		SOV_tegata = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = -0.10
+			}
+		}
+
+		SOV_kouritukaA = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.2
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		SOV_kouritukaB = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				line_change_production_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		SOV_kouritukaC = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				production_factory_start_efficiency_factor = 0.2
+				production_factory_efficiency_gain_factor = 0.15
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		SOV_gunzyuyuusen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		SOV_minzyuyuusen = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				consumer_goods_factor = -0.02
+			}
+		}
+
 	}
 }
